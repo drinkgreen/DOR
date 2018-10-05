@@ -1,0 +1,75 @@
+﻿@model DORv3.Models.ViewModels.ListOfDealsViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dashboard - List of Deals</h2>
+
+@using (@Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    ///@Html.HiddenFor(m=> Model.SearchByFilters)
+   // @Html.HiddenFor(m=> Model.Dealerships)
+    <div>
+        <table>
+            <tr>
+                <td>
+                    @Html.DropDownListFor(m => Model.SearchFilter.ID, new SelectList(Model.SearchByFilters.ToList(), "ID", "Value"))
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.FilterValue)
+                </td>
+                <td>in Dealership: @Html.DropDownListFor(m => m.Dealership.DealerID, new SelectList(Model.Dealerships.ToList(), "DealerID", "DealerName"))</td>
+                <td><input type="submit" value="Search" /></td>
+            </tr>
+        </table>
+    </div><br /><br />
+    <div>
+        <table style="vertical-align: top; width: 750px">
+            @foreach (var deal in Model.Deals)
+                {
+                <tr style="border: 1px solid gray;">
+                    <td>
+                        <input type="hidden" id="dealnum" value="@deal.dealnum" />
+                        @Html.ActionLink("View", "Details", new { ID = deal.dorID })<br />
+                        @Html.ActionLink("Edit", "Update", new { ID = deal.dorID })
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">DealNumber:</span> @deal.dealnum <br />
+                        <span style="font-weight:bold">Buyer:</span> @deal.buyerfname @deal.buyerlname <br />
+                        <span style="font-weight:bold">StockNumber:</span> @deal.stocknum <br />
+                        <span style="font-weight:bold">Status:</span> @deal.status<br />
+                    </td>
+                    <td>
+                        <span style="font-weight:bold">Vehicle:</span> @deal.year @deal.make @deal.model<br />
+                        <span style="font-weight:bold">Sales Date:</span> @deal.salesdate.ToShortDateString()<br />
+                        <span style="font-weight:bold">Delivery Date:</span> @deal.delvdate.ToShortDateString()<br />
+                        <span style="font-weight:bold">Vehicle Type:</span> @deal.vehicletype
+                    </td>
+                    @*<td>
+                            <span style="font-weight:bold">Sales Manager:</span> @deal.SalesManager<br />
+                            @foreach(var sp in deal.Salespersons)
+                            {
+                                <div>
+                                    <span style="font-weight:bold">SalesPeron:</span> @sp.Salesperson.SPName (@sp.PercentofDeal%)<br />
+                                </div>
+                            }
+                        </td>*@
+                    <td>
+                        <span style="font-weight:bold">Finance Manager:</span> @deal.FinanceManager<br />
+                        <span style="font-weight:bold">Finance Type:</span> @deal.FinanceType<br />
+                        <span style="font-weight:bold">Backend:</span> @deal.backend<br />
+                        <span style="font-weight:bold">Total Gross:</span> @deal.totalgross<br />
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+
+}
+    
+
+
+

@@ -1,0 +1,1475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FowlerDORModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="fn_GetWorkingDayCounts_Result">
+    <Property Name="WD_Total" Type="Int32" />
+    <Property Name="WD_Comp" Type="Int32" />
+    <Property Name="WD_Left" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="fn_RecapReportMaster_Result">
+    <Property Name="UsedVech" Type="Int32" Nullable="false" />
+    <Property Name="NewCar" Type="Int32" Nullable="false" />
+    <Property Name="NewTruck" Type="Int32" Nullable="false" />
+    <Property Name="NewSUV" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="fn_RecapSalesByFinType_Result">
+    <Property Name="UsedVech" Type="Int32" Nullable="false" />
+    <Property Name="NewCar" Type="Int32" Nullable="false" />
+    <Property Name="NewTruck" Type="Int32" Nullable="false" />
+    <Property Name="NewSUV" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="fn_RecapUnAssignedProductTotals_Result">
+    <Property Name="NewVeh" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UsedVeh" Type="Decimal" Precision="19" Scale="4" />
+  </ComplexType>
+  <EntityType Name="MasterFI">
+    <Key>
+      <PropertyRef Name="MasterFiId" />
+    </Key>
+    <Property Name="MasterFiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DORid" Type="Int32" Nullable="false" />
+    <Property Name="Dealerid" Type="Int32" Nullable="false" />
+    <Property Name="buyerlname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="buyerfname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cobuyerlname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cobuyerfname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vehicletype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="businesssource" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="otherbusinesssource" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salescategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="turnoption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dealnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stocknum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <Property Name="mileage" Type="Int32" Nullable="false" />
+    <Property Name="salesdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="gross" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="holdback" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="frontendgross" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="tradestatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trademake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trademodel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tradeyear" Type="Int32" />
+    <Property Name="trademileage" Type="Int32" />
+    <Property Name="tradeintent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tradetitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tradelien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tradeacv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="tradepayoff" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="salesmanager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesperson1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesperson2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fimanager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fitype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fipaymentin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fipaymentout" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fitermin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fitermout" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ficashdown" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="lienholder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="delvdate" Type="DateTime" Precision="0" />
+    <Property Name="gap" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="enviro" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="etch" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dent" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="tirewheel" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="cl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ah" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="vsc" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="vscoption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TBD" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Maint" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="finresv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="frontend" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="backend" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="totalgross" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="creditscore" Type="Int32" />
+    <Property Name="datetoacct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bookeddate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="unwinddate" Type="DateTime" Precision="0" />
+    <Property Name="datetotag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datetobank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datepaid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sectrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt_fin" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fintype" Type="Int32" />
+    <Property Name="EnteredDt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="daysinstock" Type="Int32" />
+    <Property Name="makeother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modelother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1makeother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1modelother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1year" Type="Int32" />
+    <Property Name="trade1mileage" Type="Int32" />
+    <Property Name="trade1intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1lien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade1acv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="trade1payoff" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="trade1equity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="trade2status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2makeother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2modelother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2year" Type="Int32" />
+    <Property Name="trade2mileage" Type="Int32" />
+    <Property Name="trade2intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2lien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trade2acv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="trade2payoff" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="trade2equity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="salesperson1per" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesperson2per" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesperson3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesperson3per" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gradecreditid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BUSINESSSOURCE">
+    <Key>
+      <PropertyRef Name="BSourceID" />
+      <PropertyRef Name="BusinessSourceID" />
+    </Key>
+    <Property Name="BSourceID" Type="Int32" Nullable="false" />
+    <Property Name="BusinessSource1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="0" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+    <Property Name="BusinessSourceID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DealerShip">
+    <Key>
+      <PropertyRef Name="DealerID" />
+      <PropertyRef Name="DealerName" />
+    </Key>
+    <Property Name="DealerID" Type="Int32" Nullable="false" />
+    <Property Name="DealerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="DefaultMakes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RGBColor" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Deal">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeCalc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FinanceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinReserve" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="DealsbyFinMgr">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="DealsDetail">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeCalc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FinanceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Recap" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DealStatu">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DOR_import">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="fname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleId" Type="Int32" />
+    <Property Name="VehicleTypeId" Type="Int32" />
+    <Property Name="BSourceId" Type="Int32" />
+    <Property Name="BSOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SaleCategoryId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="IntentId" Type="Int32" />
+    <Property Name="TurnOption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="FEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Holdback" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1" Type="Int32" />
+    <Property Name="Trade1Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Year" Type="Int32" />
+    <Property Name="Trade1Intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Title" Type="Int32" />
+    <Property Name="Trade1POLHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1ACV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1PayOff" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1Equity" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2" Type="Int32" />
+    <Property Name="Trade2Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Year" Type="Int32" />
+    <Property Name="Trade2Intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Title" Type="Int32" />
+    <Property Name="Trade2POLHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2ACV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2PayOff" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2Equity" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SaleManagerId" Type="Int32" />
+    <Property Name="SalesPerson1Id" Type="Int32" />
+    <Property Name="SalesPerson1Perc" Type="Int32" />
+    <Property Name="SalesPerson2Id" Type="Int32" />
+    <Property Name="SalesPerson2Perc" Type="Int32" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+    <Property Name="PaymentIn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentOut" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TermIn" Type="Int32" />
+    <Property Name="TermOut" Type="Int32" />
+    <Property Name="CashDown" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DORLienHolderId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="GradeCreditId" Type="Int32" />
+    <Property Name="AcctDate" Type="DateTime" Precision="3" />
+    <Property Name="BookedDate" Type="DateTime" Precision="3" />
+    <Property Name="TagDate" Type="DateTime" Precision="3" />
+    <Property Name="BankDate" Type="DateTime" Precision="3" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="FinReserve" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BackoutDate" Type="DateTime" Precision="3" />
+    <Property Name="UnwindDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeCalc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesPerson3Perc" Type="Int32" />
+    <Property Name="SalesPerson3Id" Type="Int32" />
+    <Property Name="GradeCredit" Type="Int32" />
+    <Property Name="DateToAcct" Type="DateTime" Precision="3" />
+    <Property Name="Mileage" Type="Int32" />
+    <Property Name="Trade1Mileage" Type="Int32" />
+    <Property Name="Trade2Mileage" Type="Int32" />
+    <Property Name="DaysInStock" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DORHistory">
+    <Key>
+      <PropertyRef Name="HistoryDORId" />
+    </Key>
+    <Property Name="HistoryDORId" Type="Int32" Nullable="false" />
+    <Property Name="DORId" Type="Int32" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="fname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleId" Type="Int32" />
+    <Property Name="VehicleTypeId" Type="Int32" />
+    <Property Name="BSourceId" Type="Int32" />
+    <Property Name="BSOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SaleCategoryId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="IntentId" Type="Int32" />
+    <Property Name="TurnOption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="FEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Holdback" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1" Type="Int32" />
+    <Property Name="Trade1Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Year" Type="Int32" />
+    <Property Name="Trade1Intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1Title" Type="Int32" />
+    <Property Name="Trade1POLHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade1ACV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1PayOff" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade1Equity" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2" Type="Int32" />
+    <Property Name="Trade2Make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2MakeOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2ModelOther" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Year" Type="Int32" />
+    <Property Name="Trade2Intent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2Title" Type="Int32" />
+    <Property Name="Trade2POLHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade2ACV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2PayOff" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Trade2Equity" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SaleManagerId" Type="Int32" />
+    <Property Name="SalesPerson1Id" Type="Int32" />
+    <Property Name="SalesPerson1Perc" Type="Int32" />
+    <Property Name="SalesPerson2Id" Type="Int32" />
+    <Property Name="SalesPerson2Perc" Type="Int32" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+    <Property Name="PaymentIn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentOut" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TermIn" Type="Int32" />
+    <Property Name="TermOut" Type="Int32" />
+    <Property Name="CashDown" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DORLienHolderId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="GradeCreditId" Type="Int32" />
+    <Property Name="AcctDate" Type="DateTime" Precision="3" />
+    <Property Name="BookedDate" Type="DateTime" Precision="3" />
+    <Property Name="TagDate" Type="DateTime" Precision="3" />
+    <Property Name="BankDate" Type="DateTime" Precision="3" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="FinReserve" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BackoutDate" Type="DateTime" Precision="3" />
+    <Property Name="UnwindDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MakeCalc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesPerson3Perc" Type="Int32" />
+    <Property Name="SalesPerson3Id" Type="Int32" />
+    <Property Name="GradeCredit" Type="Int32" />
+    <Property Name="DateToAcct" Type="DateTime" Precision="3" />
+    <Property Name="Mileage" Type="Int32" />
+    <Property Name="Trade1Mileage" Type="Int32" />
+    <Property Name="Trade2Mileage" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DORLienHolder">
+    <Key>
+      <PropertyRef Name="DORLienHolderId" />
+    </Key>
+    <Property Name="DORLienHolderId" Type="Int32" Nullable="false" />
+    <Property Name="DORLienHolder1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Dealer" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DORProduct">
+    <Key>
+      <PropertyRef Name="DORProductId" />
+    </Key>
+    <Property Name="DORProductId" Type="Int32" Nullable="false" />
+    <Property Name="DORId" Type="Int32" />
+    <Property Name="OtherProductId" Type="Int32" />
+    <Property Name="PType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Recap" Type="Int32" />
+    <Property Name="VSCOption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FinanceManager">
+    <Key>
+      <PropertyRef Name="FMId" />
+    </Key>
+    <Property Name="FMId" Type="Int32" Nullable="false" />
+    <Property Name="FMName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Dealer" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FinanceType">
+    <Key>
+      <PropertyRef Name="FinanceTypeId" />
+    </Key>
+    <Property Name="FinanceTypeId" Type="Int32" Nullable="false" />
+    <Property Name="FinanceType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FindUnwidDeal">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="UnwindDate" Type="DateTime" Precision="3" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinReserve" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="finmgrfix">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GradeCredit">
+    <Key>
+      <PropertyRef Name="GradeId" />
+    </Key>
+    <Property Name="GradeId" Type="Int32" Nullable="false" />
+    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Make">
+    <Key>
+      <PropertyRef Name="MakeId" />
+    </Key>
+    <Property Name="MakeId" Type="Int32" Nullable="false" />
+    <Property Name="Dealer" Type="Int32" />
+    <Property Name="Make1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ModelId" />
+    </Key>
+    <Property Name="ModelId" Type="Int32" Nullable="false" />
+    <Property Name="MakeId" Type="Int32" />
+    <Property Name="Model1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MonthlyHistory">
+    <Key>
+      <PropertyRef Name="MonthlyHistId" />
+    </Key>
+    <Property Name="MonthlyHistId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="HistDate" Type="DateTime" Precision="3" />
+    <Property Name="NewCount" Type="Int32" />
+    <Property Name="UsedCount" Type="Int32" />
+    <Property Name="TotalCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mtd_holder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="deal_id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deal_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="deal_delv_date" Type="DateTime" Precision="3" />
+    <Property Name="deal_stck_num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deal_mileage" Type="Int32" />
+    <Property Name="deal_customer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="deal_year" Type="Int32" />
+    <Property Name="deal_new_used" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deal_FIMgr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="deal_sp_1" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="deal_sp_2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="deal_fin_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="deal_trade_year" Type="Int32" />
+    <Property Name="deal_trade_model" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="deal_title_status" Type="Int32" />
+    <Property Name="deal_trade_value" Type="Int32" />
+    <Property Name="deal_dent" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_cl" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_warr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_gap" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_etch" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_tw" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_enviro" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_fin" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="deal_frnt_end" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="OtherIncome">
+    <Key>
+      <PropertyRef Name="OtherIncomeId" />
+    </Key>
+    <Property Name="OtherIncomeId" Type="Int32" Nullable="false" />
+    <Property Name="OtherProductId" Type="Int32" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="PType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdjDate" Type="DateTime" Precision="3" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealNum" Type="Int32" />
+    <Property Name="VSCOption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FinanceManagerId" Type="Int32" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="VehicleTypeId" Type="Int32" />
+    <Property Name="OtherType" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OtherProduct">
+    <Key>
+      <PropertyRef Name="OtherProductId" />
+    </Key>
+    <Property Name="OtherProductId" Type="Int32" Nullable="false" />
+    <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POrder" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RoleScreenXRef">
+    <Key>
+      <PropertyRef Name="RefId" />
+    </Key>
+    <Property Name="RefId" Type="Int32" Nullable="false" />
+    <Property Name="ScreenId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SalesCategory">
+    <Key>
+      <PropertyRef Name="SalesCategoryId" />
+    </Key>
+    <Property Name="SalesCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="SalesCategory1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SalesManager">
+    <Key>
+      <PropertyRef Name="SMId" />
+    </Key>
+    <Property Name="SMId" Type="Int32" Nullable="false" />
+    <Property Name="SMName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Dealer" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SalesPerson">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SPtoMasterId" Type="Int32" />
+    <Property Name="SPName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Dealer" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Screen">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" />
+    <Property Name="ScreenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenASP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenOpt" Type="Int32" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="ScreenOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Security">
+    <Key>
+      <PropertyRef Name="SecurityId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="SecurityId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerShip" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserRoleXRef">
+    <Key>
+      <PropertyRef Name="RefId" />
+    </Key>
+    <Property Name="RefId" Type="Int32" Nullable="false" />
+    <Property Name="SecurityId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="Int32" Nullable="false" />
+    <Property Name="Vehicle1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeId" />
+    </Key>
+    <Property Name="VehicleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="VehicleType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="viewBackout">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="viewBackoutsDetail">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdDate" Type="DateTime" Precision="3" />
+    <Property Name="BackoutDate" Type="DateTime" Precision="3" />
+    <Property Name="SaleDate" Type="DateTime" Precision="3" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="VehicleTypeId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="viewCashDealswithFinRe">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+    <Property Name="FinReserve" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="viewDeal">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="VehicleTypeId" Type="Int32" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+    <Property Name="VehicleId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="payablegross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MakeCalc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="viewDealswithoutsalesmgr">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="SaleManagerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="viewDORProduct">
+    <Key>
+      <PropertyRef Name="DORProductId" />
+    </Key>
+    <Property Name="DORProductId" Type="Int32" Nullable="false" />
+    <Property Name="DORId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="viewNonCashProdforCashDeal">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="DealNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="FinanceTypeId" Type="Int32" />
+    <Property Name="Recap" Type="Int32" />
+    <Property Name="PAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OtherProductId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="viewScreenbytype">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" />
+    <Property Name="ScreenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="viewScreenTypeOrder">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="Int32" Nullable="false" />
+    <Property Name="ScreenName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ScreenOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="viewUnwindDateFix">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DealerId" Type="Int32" />
+    <Property Name="DORId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="UnwindDate" Type="DateTime" Precision="3" />
+    <Property Name="lname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BackoutDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="viewUserRole">
+    <Key>
+      <PropertyRef Name="SecurityId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DealerShip" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="SecurityId" Type="Int32" Nullable="false" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VSales_Recap">
+    <Key>
+      <PropertyRef Name="SalesRecapRecordID" />
+    </Key>
+    <Property Name="SalesRecapRecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dealership" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dealer_id" Type="Int32" />
+    <Property Name="new_cars" Type="Int32" />
+    <Property Name="new_trucks" Type="Int32" />
+    <Property Name="new_suvs" Type="Int32" />
+    <Property Name="used_vehicles" Type="Int32" />
+    <Property Name="total_vehicles" Type="Int32" />
+    <Property Name="cash" Type="Int32" />
+    <Property Name="nc_cash_per" Type="Int32" />
+    <Property Name="nt_cash_per" Type="Int32" />
+    <Property Name="ns_cash_per" Type="Int32" />
+    <Property Name="uv_cash_per" Type="Int32" />
+    <Property Name="conv" Type="Int32" />
+    <Property Name="nc_conv_per" Type="Int32" />
+    <Property Name="nt_conv_per" Type="Int32" />
+    <Property Name="ns_conv_per" Type="Int32" />
+    <Property Name="uv_conv_per" Type="Int32" />
+    <Property Name="rbf" Type="Int32" />
+    <Property Name="nc_rbf_per" Type="Int32" />
+    <Property Name="nt_rbf_per" Type="Int32" />
+    <Property Name="ns_rbf_per" Type="Int32" />
+    <Property Name="uv_rbf_per" Type="Int32" />
+    <Property Name="osf" Type="Int32" />
+    <Property Name="nc_osf_per" Type="Int32" />
+    <Property Name="nt_osf_per" Type="Int32" />
+    <Property Name="ns_osf_per" Type="Int32" />
+    <Property Name="uv_osf_per" Type="Int32" />
+    <Property Name="ave_nc_front" Type="Int32" />
+    <Property Name="ave_nt_front" Type="Int32" />
+    <Property Name="ave_ns_front" Type="Int32" />
+    <Property Name="ave_nv_front" Type="Int32" />
+    <Property Name="ave_uv_front" Type="Int32" />
+    <Property Name="ave_nc_back" Type="Int32" />
+    <Property Name="ave_nt_back" Type="Int32" />
+    <Property Name="ave_ns_back" Type="Int32" />
+    <Property Name="ave_nv_back" Type="Int32" />
+    <Property Name="ave_uv_back" Type="Int32" />
+    <Property Name="tot_income" Type="Int32" />
+    <Property Name="avg_front" Type="Int32" />
+    <Property Name="avg_fi_gross" Type="Int32" />
+    <Property Name="avg_f_b" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Year">
+    <Key>
+      <PropertyRef Name="YearId" />
+    </Key>
+    <Property Name="YearId" Type="Int32" Nullable="false" />
+    <Property Name="Year1" Type="Int32" />
+    <Property Name="DisableDate" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="FowlerDOR" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MasterFIs" EntityType="Self.MasterFI" />
+    <EntitySet Name="BUSINESSSOURCEs" EntityType="Self.BUSINESSSOURCE" />
+    <EntitySet Name="DealerShips" EntityType="Self.DealerShip" />
+    <EntitySet Name="Deals" EntityType="Self.Deal" />
+    <EntitySet Name="DealsbyFinMgrs" EntityType="Self.DealsbyFinMgr" />
+    <EntitySet Name="DealsDetails" EntityType="Self.DealsDetail" />
+    <EntitySet Name="DealStatus" EntityType="Self.DealStatu" />
+    <EntitySet Name="DOR_import" EntityType="Self.DOR_import" />
+    <EntitySet Name="DORHistories" EntityType="Self.DORHistory" />
+    <EntitySet Name="DORLienHolders" EntityType="Self.DORLienHolder" />
+    <EntitySet Name="DORProducts" EntityType="Self.DORProduct" />
+    <EntitySet Name="FinanceManagers" EntityType="Self.FinanceManager" />
+    <EntitySet Name="FinanceTypes" EntityType="Self.FinanceType" />
+    <EntitySet Name="FindUnwidDeals" EntityType="Self.FindUnwidDeal" />
+    <EntitySet Name="finmgrfixes" EntityType="Self.finmgrfix" />
+    <EntitySet Name="GradeCredits" EntityType="Self.GradeCredit" />
+    <EntitySet Name="Makes" EntityType="Self.Make" />
+    <EntitySet Name="Models" EntityType="Self.Model" />
+    <EntitySet Name="MonthlyHistories" EntityType="Self.MonthlyHistory" />
+    <EntitySet Name="mtd_holder" EntityType="Self.mtd_holder" />
+    <EntitySet Name="OtherIncomes" EntityType="Self.OtherIncome" />
+    <EntitySet Name="OtherProducts" EntityType="Self.OtherProduct" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="RoleScreenXRefs" EntityType="Self.RoleScreenXRef" />
+    <EntitySet Name="SalesCategories" EntityType="Self.SalesCategory" />
+    <EntitySet Name="SalesManagers" EntityType="Self.SalesManager" />
+    <EntitySet Name="SalesPersons" EntityType="Self.SalesPerson" />
+    <EntitySet Name="Screens" EntityType="Self.Screen" />
+    <EntitySet Name="Securities" EntityType="Self.Security" />
+    <EntitySet Name="UserRoleXRefs" EntityType="Self.UserRoleXRef" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+    <EntitySet Name="viewBackouts" EntityType="Self.viewBackout" />
+    <EntitySet Name="viewBackoutsDetails" EntityType="Self.viewBackoutsDetail" />
+    <EntitySet Name="viewCashDealswithFinRes" EntityType="Self.viewCashDealswithFinRe" />
+    <EntitySet Name="viewDeals" EntityType="Self.viewDeal" />
+    <EntitySet Name="viewDealswithoutsalesmgrs" EntityType="Self.viewDealswithoutsalesmgr" />
+    <EntitySet Name="viewDORProducts" EntityType="Self.viewDORProduct" />
+    <EntitySet Name="viewNonCashProdforCashDeals" EntityType="Self.viewNonCashProdforCashDeal" />
+    <EntitySet Name="viewScreenbytypes" EntityType="Self.viewScreenbytype" />
+    <EntitySet Name="viewScreenTypeOrders" EntityType="Self.viewScreenTypeOrder" />
+    <EntitySet Name="viewUnwindDateFixes" EntityType="Self.viewUnwindDateFix" />
+    <EntitySet Name="viewUserRoles" EntityType="Self.viewUserRole" />
+    <EntitySet Name="VSales_Recap" EntityType="Self.VSales_Recap" />
+    <EntitySet Name="Years" EntityType="Self.Year" />
+    <FunctionImport Name="fn_GetWorkingDayCounts" IsComposable="true" ReturnType="Collection(FowlerDORModel.fn_GetWorkingDayCounts_Result)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="fn_RecapReportMaster" IsComposable="true" ReturnType="Collection(FowlerDORModel.fn_RecapReportMaster_Result)">
+      <Parameter Name="dealership" Mode="In" Type="Int32" />
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_RecapSalesByFinType" IsComposable="true" ReturnType="Collection(FowlerDORModel.fn_RecapSalesByFinType_Result)">
+      <Parameter Name="dealership" Mode="In" Type="Int32" />
+      <Parameter Name="fintype" Mode="In" Type="Int32" />
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fn_RecapUnAssignedProductTotals" IsComposable="true" ReturnType="Collection(FowlerDORModel.fn_RecapUnAssignedProductTotals_Result)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+      <Parameter Name="dealership" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Finance_Recap" ReturnType="Collection(FowlerDORModel.FinanceRecapObject)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Get_MTD_18" ReturnType="Collection(FowlerDORModel.MonthToDateObject)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+      <Parameter Name="dealerID" Mode="In" Type="Int32" />
+      <Parameter Name="vehicletype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="get_sales_recap" ReturnType="Collection(FowlerDORModel.SalesRecapObject)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="get_sales_recap_2">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Salesboard">
+      <Parameter Name="dealerID" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="usp_String_or_binary_data_truncated" ReturnType="Collection(FowlerDORModel.usp_String_or_binary_data_truncated_Result)">
+      <Parameter Name="String" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="wipe_mtd" />
+    <FunctionImport Name="Get_Salesboard" ReturnType="Collection(FowlerDORModel.SalesboardObject)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Get_NU_Report" ReturnType="Collection(FowlerDORModel.NU_ReportObject)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+      <Parameter Name="dealership" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_dor1234" ReturnType="Collection(FowlerDORModel.DOR1234Object)">
+      <Parameter Name="startdate" Mode="In" Type="String" />
+      <Parameter Name="enddate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetDealsSummary" ReturnType="Collection(FowlerDORModel.sp_GetDealsSummary_Result)" />
+  </EntityContainer>
+  <ComplexType Name="Get_MTD_18_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="deal_id" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="deal_status" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="deal_delv_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="deal_stck_num" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="deal_mileage" Nullable="true" />
+    <Property Type="String" Name="deal_customer" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="deal_year" Nullable="true" />
+    <Property Type="String" Name="deal_new_used" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="deal_FIMgr" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="deal_sp_1" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="deal_sp_2" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="deal_fin_type" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="deal_trade_year" Nullable="true" />
+    <Property Type="String" Name="deal_trade_model" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="deal_title_status" Nullable="true" />
+    <Property Type="Int32" Name="deal_trade_value" Nullable="true" />
+    <Property Type="Decimal" Name="deal_dent" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_cl" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_warr" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_gap" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_etch" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_tw" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_enviro" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_fin" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_frnt_end" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="usp_String_or_binary_data_truncated_Result">
+    <Property Type="String" Name="Column_Name" Nullable="true" />
+    <Property Type="String" Name="Column_Data" Nullable="true" />
+    <Property Type="Int16" Name="Column_Length" Nullable="true" />
+    <Property Type="Int64" Name="Column_Data_Length" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalesRecapObject">
+    <Property Type="String" Name="dealership" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="dealer_id" Nullable="true" />
+    <Property Type="Int32" Name="new_cars" Nullable="true" />
+    <Property Type="Int32" Name="new_trucks" Nullable="true" />
+    <Property Type="Int32" Name="new_suvs" Nullable="true" />
+    <Property Type="Int32" Name="used_vehicles" Nullable="true" />
+    <Property Type="Int32" Name="total_vehicles" Nullable="true" />
+    <Property Type="Int32" Name="cash" Nullable="true" />
+    <Property Type="Int32" Name="nc_cash_per" Nullable="true" />
+    <Property Type="Int32" Name="nt_cash_per" Nullable="true" />
+    <Property Type="Int32" Name="ns_cash_per" Nullable="true" />
+    <Property Type="Int32" Name="uv_cash_per" Nullable="true" />
+    <Property Type="Int32" Name="conv" Nullable="true" />
+    <Property Type="Int32" Name="nc_conv_per" Nullable="true" />
+    <Property Type="Int32" Name="nt_conv_per" Nullable="true" />
+    <Property Type="Int32" Name="ns_conv_per" Nullable="true" />
+    <Property Type="Int32" Name="uv_conv_per" Nullable="true" />
+    <Property Type="Int32" Name="rbf" Nullable="true" />
+    <Property Type="Int32" Name="nc_rbf_per" Nullable="true" />
+    <Property Type="Int32" Name="nt_rbf_per" Nullable="true" />
+    <Property Type="Int32" Name="ns_rbf_per" Nullable="true" />
+    <Property Type="Int32" Name="uv_rbf_per" Nullable="true" />
+    <Property Type="Int32" Name="osf" Nullable="true" />
+    <Property Type="Int32" Name="nc_osf_per" Nullable="true" />
+    <Property Type="Int32" Name="nt_osf_per" Nullable="true" />
+    <Property Type="Int32" Name="ns_osf_per" Nullable="true" />
+    <Property Type="Int32" Name="uv_osf_per" Nullable="true" />
+    <Property Type="Int32" Name="ave_nc_front" Nullable="true" />
+    <Property Type="Int32" Name="ave_nt_front" Nullable="true" />
+    <Property Type="Int32" Name="ave_ns_front" Nullable="true" />
+    <Property Type="Int32" Name="ave_nv_front" Nullable="true" />
+    <Property Type="Int32" Name="ave_uv_front" Nullable="true" />
+    <Property Type="Double" Name="ave_nc_back" Nullable="true" />
+    <Property Type="Double" Name="ave_nt_back" Nullable="true" />
+    <Property Type="Double" Name="ave_ns_back" Nullable="true" />
+    <Property Type="Double" Name="ave_nv_back" Nullable="true" />
+    <Property Type="Double" Name="ave_uv_back" Nullable="true" />
+    <Property Type="Double" Name="tot_income" Nullable="true" />
+    <Property Type="Double" Name="avg_front" Nullable="true" />
+    <Property Type="Double" Name="avg_fi_gross" Nullable="true" />
+    <Property Type="Int32" Name="avg_f_b" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="FinanceRecapObject">
+    <Property Type="String" Name="dealer_name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="dealer_id" Nullable="true" />
+    <Property Type="Int32" Name="cash_deals" Nullable="true" />
+    <Property Type="Double" Name="cash_deals_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_cash" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="conv_deals" Nullable="true" />
+    <Property Type="Double" Name="conv_deals_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_conv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RBF_deals" Nullable="true" />
+    <Property Type="Double" Name="RBF_deals_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_RBF" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="OSF_deals" Nullable="true" />
+    <Property Type="Double" Name="OSF_deals_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_OSF" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="warr" Nullable="true" />
+    <Property Type="Double" Name="warr_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_warr_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="dent" Nullable="true" />
+    <Property Type="Double" Name="dent_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_dent_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="maint" Nullable="true" />
+    <Property Type="Double" Name="maint_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_maint_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="cl" Nullable="true" />
+    <Property Type="Double" Name="cl_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_cl_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ah" Nullable="true" />
+    <Property Type="Double" Name="ah_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_ah_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="env" Nullable="true" />
+    <Property Type="Double" Name="env_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_env_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="etch" Nullable="true" />
+    <Property Type="Double" Name="etch_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_etch_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="gap" Nullable="true" />
+    <Property Type="Double" Name="gap_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_gap_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="tw" Nullable="true" />
+    <Property Type="Double" Name="tw_per" Nullable="true" />
+    <Property Type="Decimal" Name="per_tw_income" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="cash_tot" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="conv_tot" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="rbf_tot" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="osf_tot" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="tot_tot" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_fe" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_be" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_tot" Nullable="true" Precision="19" />
+    <Property Type="Double" Name="tot_vehicle" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Get_Salesboard_Result">
+    <Property Type="Int32" Name="DealerId" Nullable="false" />
+    <Property Type="DateTime" Name="DateOfSale" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DayOfTheWeek" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="SellingDayNumber" Nullable="true" />
+    <Property Type="Int32" Name="WeekNumber" Nullable="true" />
+    <Property Type="Int32" Name="NewSalesCount" Nullable="true" />
+    <Property Type="Int32" Name="UsedSalesCount" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalesboardObject">
+    <Property Type="Int32" Name="DealerId" Nullable="false" />
+    <Property Type="String" Name="Dealership" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfSale" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DayOfTheWeek" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="SellingDayNumber" Nullable="true" />
+    <Property Type="Int32" Name="WeekNumber" Nullable="true" />
+    <Property Type="Int32" Name="NewSalesCount" Nullable="true" />
+    <Property Type="Int32" Name="UsedSalesCount" Nullable="true" />
+    <Property Type="Int32" Name="UnwindSalesCount" Nullable="true" />
+    <Property Type="String" Name="RGBColor" Nullable="false" MaxLength="7" />
+  </ComplexType>
+  <ComplexType Name="MonthToDateObject">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="deal_id" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="deal_status" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="deal_delv_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="deal_stck_num" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="deal_mileage" Nullable="true" />
+    <Property Type="String" Name="deal_customer" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="deal_year" Nullable="true" />
+    <Property Type="String" Name="deal_new_used" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="deal_FIMgr" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="deal_sp_1" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="deal_sp_2" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="deal_fin_type" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="deal_trade_year" Nullable="true" />
+    <Property Type="String" Name="deal_trade_model" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="deal_title_status" Nullable="true" />
+    <Property Type="Int32" Name="deal_trade_value" Nullable="true" />
+    <Property Type="Decimal" Name="deal_dent" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_cl" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_warr" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_gap" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_etch" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_tw" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_enviro" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_fin" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="deal_frnt_end" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="Get_NU_Report_Result">
+    <Property Type="String" Name="dealer_name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="dealer_id" Nullable="true" />
+    <Property Type="Int32" Name="cash_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="cash_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="cash_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="cash_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_cash_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_cash_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="conv_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="conv_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="conv_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="conv_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_conv_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_conv_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RBF_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="RBF_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="RBF_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="RBF_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_RBF_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_RBF_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="OSF_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="OSF_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="OSF_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="OSF_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_OSF_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_OSF_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="warr_nv" Nullable="true" />
+    <Property Type="Int32" Name="warr_uv" Nullable="true" />
+    <Property Type="Double" Name="warr_per_nv" Nullable="true" />
+    <Property Type="Double" Name="warr_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_warr_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_warr_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="dent_nv" Nullable="true" />
+    <Property Type="Int32" Name="dent_uv" Nullable="true" />
+    <Property Type="Double" Name="dent_per_nv" Nullable="true" />
+    <Property Type="Double" Name="dent_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_dent_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_dent_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="maint_nv" Nullable="true" />
+    <Property Type="Int32" Name="maint_uv" Nullable="true" />
+    <Property Type="Double" Name="maint_per_nv" Nullable="true" />
+    <Property Type="Double" Name="maint_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_maint_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_maint_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="cl_nv" Nullable="true" />
+    <Property Type="Int32" Name="cl_uv" Nullable="true" />
+    <Property Type="Double" Name="cl_per_nv" Nullable="true" />
+    <Property Type="Double" Name="cl_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_cl_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_cl_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ah_nv" Nullable="true" />
+    <Property Type="Int32" Name="ah_uv" Nullable="true" />
+    <Property Type="Double" Name="ah_per_nv" Nullable="true" />
+    <Property Type="Double" Name="ah_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_ah_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_ah_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="env_nv" Nullable="true" />
+    <Property Type="Int32" Name="env_uv" Nullable="true" />
+    <Property Type="Double" Name="env_per_nv" Nullable="true" />
+    <Property Type="Double" Name="env_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_env_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_env_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="etch_nv" Nullable="true" />
+    <Property Type="Int32" Name="etch_uv" Nullable="true" />
+    <Property Type="Double" Name="etch_per_nv" Nullable="true" />
+    <Property Type="Double" Name="etch_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_etch_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_etch_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="gap_nv" Nullable="true" />
+    <Property Type="Int32" Name="gap_uv" Nullable="true" />
+    <Property Type="Double" Name="gap_per_nv" Nullable="true" />
+    <Property Type="Double" Name="gap_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_gap_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_gap_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="tw_nv" Nullable="true" />
+    <Property Type="Int32" Name="tw_uv" Nullable="true" />
+    <Property Type="Double" Name="tw_per_nv" Nullable="true" />
+    <Property Type="Double" Name="tw_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_tw_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_tw_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="cash_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="cash_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="conv_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="conv_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="rbf_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="rbf_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="osf_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="osf_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="tot_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="tot_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_fe_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_fe_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_be_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_be_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Double" Name="tot_vehicle_nv" Nullable="true" />
+    <Property Type="Double" Name="tot_vehicle_uv" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="NU_ReportObject">
+    <Property Type="String" Name="dealer_name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="dealer_id" Nullable="true" />
+    <Property Type="Int32" Name="cash_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="cash_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="cash_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="cash_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_cash_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_cash_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="conv_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="conv_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="conv_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="conv_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_conv_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_conv_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RBF_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="RBF_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="RBF_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="RBF_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_RBF_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_RBF_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="OSF_deals_nv" Nullable="true" />
+    <Property Type="Int32" Name="OSF_deals_uv" Nullable="true" />
+    <Property Type="Double" Name="OSF_deals_per_nv" Nullable="true" />
+    <Property Type="Double" Name="OSF_deals_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_deal_income_OSF_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_deal_income_OSF_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="warr_nv" Nullable="true" />
+    <Property Type="Int32" Name="warr_uv" Nullable="true" />
+    <Property Type="Double" Name="warr_per_nv" Nullable="true" />
+    <Property Type="Double" Name="warr_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_warr_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_warr_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="dent_nv" Nullable="true" />
+    <Property Type="Int32" Name="dent_uv" Nullable="true" />
+    <Property Type="Double" Name="dent_per_nv" Nullable="true" />
+    <Property Type="Double" Name="dent_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_dent_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_dent_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="maint_nv" Nullable="true" />
+    <Property Type="Int32" Name="maint_uv" Nullable="true" />
+    <Property Type="Double" Name="maint_per_nv" Nullable="true" />
+    <Property Type="Double" Name="maint_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_maint_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_maint_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="cl_nv" Nullable="true" />
+    <Property Type="Int32" Name="cl_uv" Nullable="true" />
+    <Property Type="Double" Name="cl_per_nv" Nullable="true" />
+    <Property Type="Double" Name="cl_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_cl_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_cl_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ah_nv" Nullable="true" />
+    <Property Type="Int32" Name="ah_uv" Nullable="true" />
+    <Property Type="Double" Name="ah_per_nv" Nullable="true" />
+    <Property Type="Double" Name="ah_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_ah_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_ah_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="env_nv" Nullable="true" />
+    <Property Type="Int32" Name="env_uv" Nullable="true" />
+    <Property Type="Double" Name="env_per_nv" Nullable="true" />
+    <Property Type="Double" Name="env_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_env_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_env_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="etch_nv" Nullable="true" />
+    <Property Type="Int32" Name="etch_uv" Nullable="true" />
+    <Property Type="Double" Name="etch_per_nv" Nullable="true" />
+    <Property Type="Double" Name="etch_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_etch_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_etch_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="gap_nv" Nullable="true" />
+    <Property Type="Int32" Name="gap_uv" Nullable="true" />
+    <Property Type="Double" Name="gap_per_nv" Nullable="true" />
+    <Property Type="Double" Name="gap_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_gap_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_gap_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="tw_nv" Nullable="true" />
+    <Property Type="Int32" Name="tw_uv" Nullable="true" />
+    <Property Type="Double" Name="tw_per_nv" Nullable="true" />
+    <Property Type="Double" Name="tw_per_uv" Nullable="true" />
+    <Property Type="Decimal" Name="per_tw_income_nv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="per_tw_income_uv" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="cash_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="cash_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="conv_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="conv_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="rbf_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="rbf_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="osf_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="osf_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="tot_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="tot_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_fe_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_fe_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_be_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_be_uv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_tot_nv" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="avg_tot_uv" Nullable="true" Precision="19" />
+    <Property Type="Double" Name="tot_vehicle_nv" Nullable="true" />
+    <Property Type="Double" Name="tot_vehicle_uv" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DOR1234Object">
+    <Property Type="String" Name="dealership" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="dealer_id" Nullable="true" />
+    <Property Type="Int32" Name="New_Vehicles" Nullable="true" />
+    <Property Type="Int32" Name="Used_Vehicles" Nullable="true" />
+    <Property Type="Int32" Name="Total_Units" Nullable="true" />
+    <Property Type="Int32" Name="Cash_Deals" Nullable="true" />
+    <Property Type="Double" Name="Cash_Deals__" Nullable="true" />
+    <Property Type="Int32" Name="Conv_Deals" Nullable="true" />
+    <Property Type="Double" Name="Conv_Deals__" Nullable="true" />
+    <Property Type="Int32" Name="RBF_Deals" Nullable="true" />
+    <Property Type="Double" Name="RBF_Deals__" Nullable="true" />
+    <Property Type="Int32" Name="OSF_Deals" Nullable="true" />
+    <Property Type="Double" Name="OSF_Deals__" Nullable="true" />
+    <Property Type="Int32" Name="M_A_P_" Nullable="true" />
+    <Property Type="Int32" Name="TOTAL" Nullable="true" />
+    <Property Type="Int32" Name="Travel" Nullable="true" />
+    <Property Type="Double" Name="Warranties__" Nullable="true" />
+    <Property Type="Int32" Name="Windsh" Nullable="true" />
+    <Property Type="Double" Name="Windsh__" Nullable="true" />
+    <Property Type="Int32" Name="Credit_Life" Nullable="true" />
+    <Property Type="Double" Name="Credit_Life__" Nullable="true" />
+    <Property Type="Int32" Name="A_H" Nullable="true" />
+    <Property Type="Double" Name="A_H__" Nullable="true" />
+    <Property Type="Int32" Name="ENV_" Nullable="true" />
+    <Property Type="Double" Name="ENV___" Nullable="true" />
+    <Property Type="Int32" Name="ETCH" Nullable="true" />
+    <Property Type="Double" Name="ETCH__" Nullable="true" />
+    <Property Type="Int32" Name="GAP" Nullable="true" />
+    <Property Type="Double" Name="GAP__" Nullable="true" />
+    <Property Type="Int32" Name="KEY" Nullable="true" />
+    <Property Type="Double" Name="KEY__" Nullable="true" />
+    <Property Type="Double" Name="CONV_Reserve" Nullable="true" />
+    <Property Type="Double" Name="CONV_Reserve_UNIT" Nullable="true" />
+    <Property Type="Double" Name="RBF_Reserve" Nullable="true" />
+    <Property Type="Double" Name="RBF_Reserve_UNIT" Nullable="true" />
+    <Property Type="Int32" Name="Total_Reserve" Nullable="true" />
+    <Property Type="Int32" Name="Total_Reserve_Per" Nullable="true" />
+    <Property Type="Decimal" Name="Cash_Income" Nullable="true" Scale="2" ConcurrencyMode="None" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Decimal" Name="Conv_Income" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="RBF_Income" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="OSF_Income" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Total_Income" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Avg__Front" Nullable="true" />
+    <Property Type="Int32" Name="Avg_F_I_Gross" Nullable="true" />
+    <Property Type="Int32" Name="Avg_Front___Back" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetDealsSummary_Result">
+    <Property Type="String" Name="buyerlname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="buyerfname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cobuyerlname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cobuyerfname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="vehicle" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="vehicletype" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DaysInStock" Nullable="true" />
+    <Property Type="String" Name="dealnum" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="stocknum" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="make" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="model" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="year" Nullable="false" />
+    <Property Type="DateTime" Name="salesdate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Trade1Status" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="SalesManager" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SPName" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SPName1" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SPName2" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="FinanceManager" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="FinanceType" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="backend" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="totalgross" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+</Schema>

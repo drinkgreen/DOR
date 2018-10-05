@@ -1,0 +1,54 @@
+﻿@model DORv3.Models.ViewModels.AdminAddUserViewModel
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddUser</h2>
+<br /><br />
+@using (Html.BeginForm("AddUser", "Admin", FormMethod.Post))
+{
+    for (int i = 0; i < Model.UserRoleObjects.Count; i++)
+    {
+        @Html.HiddenFor(model => Model.UserRoleObjects[i])
+    }
+    <div>
+        <table>
+            <tr>
+                <td>
+                    Email Address: @Html.TextBox("emailUsername", "newuser@fowlerholding.com")<br /><br />
+                    Password: @Html.TextBox("userPassword", "Password")<br /><br />
+
+
+                    <table>
+                        <tr style="font-weight: bold">
+                            <td>
+                                Dealership
+                            </td>
+                            <td>
+                                Security Role
+                            </td>
+                        </tr>
+                        @foreach (var urObj in Model.UserRoleObjects)
+                        {
+                            <tr>
+                                <td width="150px" style="padding: 3px">
+                                    @Html.DisplayFor(m => urObj.DealerName)
+
+                                </td>
+                                <td style="padding: 3px">
+                                    @Html.DropDownListFor(m => urObj.RoleID, new SelectList(Model.Roles.OrderBy(d => d.Id).ToList(), "Id", "Name"))
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td style="text-align: center">
+                    <input type="submit" value="Add User Account" size="200" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+

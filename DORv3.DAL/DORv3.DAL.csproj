@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{393ABA7D-10A1-4DE2-B38B-6AFE42B18ED0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DORv3.DAL</RootNamespace>
+    <AssemblyName>DORv3.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <Content Include="packages.config" />
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUSINESSSOURCE.cs" />
+    <Compile Include="Deal.cs" />
+    <Compile Include="DealerShip.cs" />
+    <Compile Include="DealsbyFinMgr.cs" />
+    <Compile Include="DealsDetail.cs" />
+    <Compile Include="DealStatus.cs" />
+    <Compile Include="DORHistory.cs" />
+    <Compile Include="DORLienHolder.cs" />
+    <Compile Include="DORProduct.cs" />
+    <Compile Include="DOR_import.cs" />
+    <Compile Include="FinanceManager.cs" />
+    <Compile Include="FinanceType.cs" />
+    <Compile Include="FindUnwidDeal.cs" />
+    <Compile Include="finmgrfix.cs" />
+    <Compile Include="FowlerDORContext.cs" />
+    <Compile Include="GradeCredit.cs" />
+    <Compile Include="Make.cs" />
+    <Compile Include="MasterFI.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\BUSINESSSOURCE.cs" />
+    <Compile Include="Models\Deal.cs" />
+    <Compile Include="Models\DealerShip.cs" />
+    <Compile Include="Models\DealsbyFinMgr.cs" />
+    <Compile Include="Models\DealsDetail.cs" />
+    <Compile Include="Models\DealStatu.cs" />
+    <Compile Include="Models\DORHistory.cs" />
+    <Compile Include="Models\DORLienHolder.cs" />
+    <Compile Include="Models\DORProduct.cs" />
+    <Compile Include="Models\DOR_import.cs" />
+    <Compile Include="Models\FinanceManager.cs" />
+    <Compile Include="Models\FinanceType.cs" />
+    <Compile Include="Models\FindUnwidDeal.cs" />
+    <Compile Include="Models\finmgrfix.cs" />
+    <Compile Include="Models\FowlerDORContext.cs" />
+    <Compile Include="Models\GradeCredit.cs" />
+    <Compile Include="Models\Make.cs" />
+    <Compile Include="Models\Mapping\AspNetRoleMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserClaimMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserLoginMap.cs" />
+    <Compile Include="Models\Mapping\BUSINESSSOURCEMap.cs" />
+    <Compile Include="Models\Mapping\DealerShipMap.cs" />
+    <Compile Include="Models\Mapping\DealMap.cs" />
+    <Compile Include="Models\Mapping\DealsbyFinMgrMap.cs" />
+    <Compile Include="Models\Mapping\DealsDetailMap.cs" />
+    <Compile Include="Models\Mapping\DealStatuMap.cs" />
+    <Compile Include="Models\Mapping\DORHistoryMap.cs" />
+    <Compile Include="Models\Mapping\DORLienHolderMap.cs" />
+    <Compile Include="Models\Mapping\DORProductMap.cs" />
+    <Compile Include="Models\Mapping\DOR_importMap.cs" />
+    <Compile Include="Models\Mapping\FinanceManagerMap.cs" />
+    <Compile Include="Models\Mapping\FinanceTypeMap.cs" />
+    <Compile Include="Models\Mapping\FindUnwidDealMap.cs" />
+    <Compile Include="Models\Mapping\finmgrfixMap.cs" />
+    <Compile Include="Models\Mapping\GradeCreditMap.cs" />
+    <Compile Include="Models\Mapping\MakeMap.cs" />
+    <Compile Include="Models\Mapping\MasterFIMap.cs" />
+    <Compile Include="Models\Mapping\ModelMap.cs" />
+    <Compile Include="Models\Mapping\MonthlyHistoryMap.cs" />
+    <Compile Include="Models\Mapping\MSreplication_optionsMap.cs" />
+    <Compile Include="Models\Mapping\mtd_holderMap.cs" />
+    <Compile Include="Models\Mapping\OtherIncomeMap.cs" />
+    <Compile Include="Models\Mapping\OtherProductMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\RoleScreenXRefMap.cs" />
+    <Compile Include="Models\Mapping\Roles_OLDMap.cs" />
+    <Compile Include="Models\Mapping\SaleMap.cs" />
+    <Compile Include="Models\Mapping\SalesCategoryMap.cs" />
+    <Compile Include="Models\Mapping\SalesManagerMap.cs" />
+    <Compile Include="Models\Mapping\SalesPersonMap.cs" />
+    <Compile Include="Models\Mapping\ScreenMap.cs" />
+    <Compile Include="Models\Mapping\SecurityMap.cs" />
+    <Compile Include="Models\Mapping\spt_fallback_dbMap.cs" />
+    <Compile Include="Models\Mapping\spt_fallback_devMap.cs" />
+    <Compile Include="Models\Mapping\spt_fallback_usgMap.cs" />
+    <Compile Include="Models\Mapping\spt_monitorMap.cs" />
+    <Compile Include="Models\Mapping\spt_valuesMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\TurnOptionMap.cs" />
+    <Compile Include="Models\Mapping\UserMap.cs" />
+    <Compile Include="Models\Mapping\UserRoleMap.cs" />
+    <Compile Include="Models\Mapping\UserRoleXRefMap.cs" />
+    <Compile Include="Models\Mapping\VehicleMap.cs" />
+    <Compile Include="Models\Mapping\VehicleTypeMap.cs" />
+    <Compile Include="Models\Mapping\viewBackoutMap.cs" />
+    <Compile Include="Models\Mapping\viewBackoutsDetailMap.cs" />
+    <Compile Include="Models\Mapping\viewCashDealswithFinReMap.cs" />
+    <Compile Include="Models\Mapping\viewDealMap.cs" />
+    <Compile Include="Models\Mapping\viewDealswithoutsalesmgrMap.cs" />
+    <Compile Include="Models\Mapping\viewDORProductMap.cs" />
+    <Compile Include="Models\Mapping\viewNonCashProdforCashDealMap.cs" />
+    <Compile Include="Models\Mapping\viewScreenbytypeMap.cs" />
+    <Compile Include="Models\Mapping\viewScreenTypeOrderMap.cs" />
+    <Compile Include="Models\Mapping\viewUnwindDateFixMap.cs" />
+    <Compile Include="Models\Mapping\viewUserRoleMap.cs" />
+    <Compile Include="Models\Mapping\VSales_RecapMap.cs" />
+    <Compile Include="Models\Mapping\XRef_UserDealershipRolesMap.cs" />
+    <Compile Include="Models\Mapping\YearMap.cs" />
+    <Compile Include="Models\masterContext.cs" />
+    <Compile Include="Models\MasterFI.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\MonthlyHistory.cs" />
+    <Compile Include="Models\MSreplication_options.cs" />
+    <Compile Include="Models\mtd_holder.cs" />
+    <Compile Include="Models\OtherIncome.cs" />
+    <Compile Include="Models\OtherProduct.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RoleScreenXRef.cs" />
+    <Compile Include="Models\Roles_OLD.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\SalesCategory.cs" />
+    <Compile Include="Models\SalesManager.cs" />
+    <Compile Include="Models\SalesPerson.cs" />
+    <Compile Include="Models\Screen.cs" />
+    <Compile Include="Models\Security.cs" />
+    <Compile Include="Models\spt_fallback_db.cs" />
+    <Compile Include="Models\spt_fallback_dev.cs" />
+    <Compile Include="Models\spt_fallback_usg.cs" />
+    <Compile Include="Models\spt_monitor.cs" />
+    <Compile Include="Models\spt_values.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\TurnOption.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\UserRoleXRef.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleType.cs" />
+    <Compile Include="Models\viewBackout.cs" />
+    <Compile Include="Models\viewBackoutsDetail.cs" />
+    <Compile Include="Models\viewCashDealswithFinRe.cs" />
+    <Compile Include="Models\viewDeal.cs" />
+    <Compile Include="Models\viewDealswithoutsalesmgr.cs" />
+    <Compile Include="Models\viewDORProduct.cs" />
+    <Compile Include="Models\viewNonCashProdforCashDeal.cs" />
+    <Compile Include="Models\viewScreenbytype.cs" />
+    <Compile Include="Models\viewScreenTypeOrder.cs" />
+    <Compile Include="Models\viewUnwindDateFix.cs" />
+    <Compile Include="Models\viewUserRole.cs" />
+    <Compile Include="Models\VSales_Recap.cs" />
+    <Compile Include="Models\XRef_UserDealershipRoles.cs" />
+    <Compile Include="Models\Year.cs" />
+    <Compile Include="MonthlyHistory.cs" />
+    <Compile Include="mtd_holder.cs" />
+    <Compile Include="OtherIncome.cs" />
+    <Compile Include="OtherProduct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="RoleScreenXRef.cs" />
+    <Compile Include="SalesCategory.cs" />
+    <Compile Include="SalesManager.cs" />
+    <Compile Include="SalesPerson.cs" />
+    <Compile Include="Screen.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserRoleXRef.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleType.cs" />
+    <Compile Include="viewBackout.cs" />
+    <Compile Include="viewBackoutsDetail.cs" />
+    <Compile Include="viewCashDealswithFinRe.cs" />
+    <Compile Include="viewDeal.cs" />
+    <Compile Include="viewDealswithoutsalesmgr.cs" />
+    <Compile Include="viewDORProduct.cs" />
+    <Compile Include="viewNonCashProdforCashDeal.cs" />
+    <Compile Include="viewScreenbytype.cs" />
+    <Compile Include="viewScreenTypeOrder.cs" />
+    <Compile Include="viewUnwindDateFix.cs" />
+    <Compile Include="viewUserRole.cs" />
+    <Compile Include="VSales_Recap.cs" />
+    <Compile Include="XRef_UserDealershipRoles.cs" />
+    <Compile Include="Year.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58473</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58054/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

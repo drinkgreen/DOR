@@ -1,0 +1,8 @@
+﻿@model DORv3.Models.ViewModels.MTDViewModel
+
+@{
+    var grid = new WebGrid(Model.MTDRecords, canPage: false, canSort: true, ajaxUpdateContainerId: "myGrid");
+}
+<div id="myGrid">
+    @grid.GetHtml(tableStyle: "webgrid-table", rowStyle: "webgrid-row-style", alternatingRowStyle: "webgrid-alternating-row")
+</div>

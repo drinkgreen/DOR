@@ -1,0 +1,54 @@
+﻿@model DORv3.Models.ViewModels.MTDViewModel
+@using System.ComponentModel;
+
+@{
+    ViewBag.Title = "MTD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h2>MTD Report</h2>
+Report Range: @Html.EditorFor(m => Model.StartDate)  to  @Html.EditorFor(m => Model.EndDate)
+Dealership: @Html.DropDownListFor(m => Model.Dealership.DealerID, 
+           new SelectList(
+               Model.Dealerships.ToList(), 
+               "DealerID", 
+               "DealerName")
+         )
+&nbsp;&nbsp;<input type="button" id="btnNewSearch" value="New Search" />
+@*<a href="" onclick="javascript: history.go(-1);">Return to Previous Page</a>*@
+<div>
+    <hr />
+
+        @{ 
+            var grid = new WebGrid(Model.MTDRecords, canPage:false);
+        }
+        @grid.GetHtml()
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnNewSearch").click(function(){
+            $.post("@Url.Action("MTD")", { startDate2: $("#StartDate").val(), endDate2: $("#EndDate").val(), dealerID2: $("#Dealership_DealerID").val(), saleType2: "All" }, function (result) {
+                window.location.href = result.Url
+            });
+        })
+    });
+</script>
+<script>
+    @*$(function () {
+        var tfoot = '<tfoot><tr><td class="_220">Total</td><td colspan="2" class="_150">&nbsp;</td>';
+        tfoot += '<td colspan="2" class="_90">Dent: @Model.Dent</td>';
+        tfoot += '<td colspan="2" class="_90">CL: @Model.CL</td>';
+        tfoot += '<td colspan="2" class="_90">Warr: @Model.Warr</td>';
+        tfoot += '<td colspan="2" class="_90">Gap: @Model.Gap</td>';
+        tfoot += '<td colspan="2" class="_90">Etch: @Model.Etch</td>';
+        tfoot += '<td colspan="2" class="_90">TW: @Model.TW</td>';
+        tfoot += '<td colspan="2" class="_90">Enviro: @Model.Enviro</td>';
+        tfoot += '<td colspan="2" class="_90">Finance: @Model.Finance</td>';
+        tfoot += '<td colspan="2" class="_90">FrontEnd: @Model.FrontEnd</td>';
+        tfoot += '</tr></tfoot>';
+        $('table').append(tfoot);
+    })*@
+
+</script>
+

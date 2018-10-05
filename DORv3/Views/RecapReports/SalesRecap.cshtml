@@ -1,0 +1,88 @@
+﻿@model DORv3.Models.ViewModels.SalesRecapViewModel
+
+@{
+    ViewBag.Title = "Sales Recap Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .webgrid-table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        width: 100%;
+        display: table;
+        border-collapse: separate;
+        border: solid 1px gray;
+        background-color: white;
+    }
+
+        .webgrid-table td, th {
+            border: 1px solid gray;
+            padding: 3px 7px 2px;
+        }
+
+    .webgrid-header {
+        background-color: #A7C942;
+        color: #FFFFFF;
+        padding-bottom: 4px;
+        padding-top: 5px;
+        text-align: left;
+    }
+
+    .webgrid-footer {
+    }
+
+    .webgrid-row-style {
+        padding: 3px 7px 2px;
+    }
+
+    .webgrid-alternating-row {
+        background-color: #ADD8E6; /*#8EADDC;*/ 
+        padding: 3px 7px 2px;
+    }
+</style>
+<h2>SalesRecap</h2>
+Report Range: @Html.EditorFor(m => Model.StartDate)  to  @Html.EditorFor(m => Model.EndDate)  &nbsp;&nbsp; <input type="button" id="btnNewSearch" value="New Search" />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @{
+            var grid = new WebGrid(Model.RecapRecords,
+                                  canSort: false,
+                                  canPage: false
+                                  );
+        }
+        @grid.GetHtml(tableStyle: "webgrid-table", rowStyle: "webgrid-row-style", alternatingRowStyle: "webgrid-alternating-row")
+
+    </dl>
+</div>
+
+@*------Scripts------------*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnNewSearch").click(function(){
+            $.post("@Url.Action("NewSearch")", { action: "SalesRecap", sDate: $("#StartDate").val(), eDate: $("#EndDate").val() }, function (result) {
+                window.location.href = result.Url
+            });
+        })
+    });
+</script>
+
+<script type="text/javascript">
+        $('tr').each(function (index) { //iterate over all table rows
+            if (index > 0) {     //skip header
+                $(this).children('td').each(function (i) {
+                    if (i > 0) { //skip first column
+                        if($(this).text().replace(/[^()0-9.-]+/g, "").match(/[()]/g) != null && $(this).text().replace(/[^()0-9.-]+/g, "").match(/[()]/g).length > 1)
+                        {
+                            $(this).css("color", "red");
+                        }
+                        //else
+                        //{
+                        //    $(this).css("color", "green");
+                        //}
+                    }
+                });
+        }
+    });
+</script>

@@ -1,0 +1,793 @@
+﻿@model DORv3.Models.ViewModels.UpdateDealViewModel
+@{
+    ViewBag.Title = "Update Screen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (@Html.BeginForm("Update", "Dashboard", FormMethod.Post))
+{
+        @Html.HiddenFor(m => m.CurrentUser)
+        @Html.HiddenFor(m => m.IsCurrentMonth)
+        //@Html.HiddenFor(m => m.CanUpdate)
+        @Html.HiddenFor(m => m.IsAdmin)
+
+        @Html.HiddenFor(m => m.DealerID)
+        @Html.HiddenFor(m => m.VehicleKinds)
+        @Html.HiddenFor(m => m.VehicleTypes)
+        @Html.HiddenFor(m => m.Makes)
+        @Html.HiddenFor(m => m.VehicleModels)
+        @Html.HiddenFor(m => m.LienHolders)
+        @Html.HiddenFor(m => m.Years)
+        @Html.HiddenFor(m => m.SalesPeople)
+        @Html.HiddenFor(m => m.SalesManagers)
+        @Html.HiddenFor(m => m.FinanceManagers)
+        @Html.HiddenFor(m => m.FinanceTypes)
+        @Html.HiddenFor(m => m.GradeCredits)
+        @Html.HiddenFor(m => m.BusinessSources)
+        @Html.HiddenFor(m => m.DealStatuses)
+        @Html.HiddenFor(m => m.SalesCategories)
+
+    <h2>Edit - Deal #@Model.Deal.dealnum</h2> 
+    @Html.ValidationSummary(false, "", new {@class="text-danger" })
+    <div style="border: 1px solid lightgray;">
+        @Html.HiddenFor(m => Model.Deal.DORid)
+
+        <h4>Customer Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Buyer Last Name</label><br />
+                    @Html.TextBoxFor(m => Model.Deal.buyerlname)
+                </td>
+                <td>
+                    <label>Buyer First Name</label><br />
+                    @Html.TextBoxFor(m => Model.Deal.buyerfname)
+                </td>
+                <td>
+                    <label>Co-Buyer Last Name</label><br />
+                    @Html.TextBoxFor(m => Model.Deal.cobuyerlname)
+                </td>
+                <td>
+                    <label>Co-Buyer First Name</label><br />
+                    @Html.TextBoxFor(m => Model.Deal.cobuyerfname)
+                </td>         
+            </tr>
+        </table><br />
+    </div>
+    <div style="border: 1px solid lightgray;">
+        <h4>Sale Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Vehicle</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.vehicleid,
+            new SelectList(
+                Model.VehicleKinds.ToList(),
+                "VehicleID",
+                "Vehicle1"),
+            "", new { @class = "form-control" }
+            )
+                </td>
+                <td>
+                    <label>Vehicle Type</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.vehicletypeid,
+            new SelectList(
+                Model.VehicleTypes.ToList(),
+                "VehicleTypeID",
+                "VehicleType1"),
+            "", new { @class = "form-control" }
+            )
+                </td>
+                <td>
+                    <label>Business Source</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.businesssource,
+            new SelectList(
+                Model.BusinessSources.ToList(),
+                "BusinessSourceID",
+                "BusinessSource1")
+                , "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Sale Category</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.salescategory,
+            new SelectList(
+                Model.SalesCategories.ToList(),
+                "SalesCategoryId",
+                "SalesCategory1"),
+            "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Status</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.status,
+            new SelectList(
+                Model.DealStatuses.ToList(),
+                "StatusID",
+                "StatusName"),
+            "", new { @class = "form-control" }
+            )
+                </td>
+                <td>
+                    <label>Intent</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.intent,
+            new SelectList(
+                Model.FinanceTypes.ToList(),
+                "FinanceTypeId",
+                "FinanceType1"),
+            "", new { @class = "form-control" }
+                )
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Turn Option</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.turnoption,
+                new List<SelectListItem>()
+                {
+                    new SelectListItem() {Text = "", Value = "", Selected = (Model.Deal.turnoption == "0"? true : false) },
+                    new SelectListItem {Text = "Turn", Value = "1", Selected = (Model.Deal.turnoption == "1" ? true : false) },
+                    new SelectListItem {Text = "No Turn", Value = "2", Selected = (Model.Deal.turnoption == "2" ? true : false) }
+                })
+
+                </td>
+                <td></td>
+                <td>
+                    <label>Other Business Source</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.otherbusinesssource)
+                </td>
+                <td></td>
+                <td>
+                    <label>Days in Stock</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.daysinstock)
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Deal Number</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.dealnum)
+                </td>
+                <td>
+                    <label>Stock Number</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.stocknum)
+                </td>
+                <td>
+                    <label>Make</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.make,
+            new SelectList(
+                Model.Makes.ToList(),
+                "MakeId",
+                "Make1"),
+            "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Model</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.model,
+            new SelectList(
+                Model.VehicleModels.ToList(),
+                "Model1",
+                "Model1",
+                Model.Deal.model.FirstOrDefault()),
+            "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Other Make</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.makeother)
+                </td>
+                <td>
+                    <label>Other Model</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.modelother)
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        <label>Year</label><br>
+                        @Html.DropDownListFor(m => Model.Deal.year,
+                   new SelectList(
+                       Model.Years.ToList(), Model.Deal.year))
+                    </td>
+                    <td>
+                        <label>Mileage</label><br>
+                        @Html.TextBoxFor(m => Model.Deal.mileage)
+                    </td>
+                    <td>
+                        <label>Sale Date</label><br />
+                        @Html.EditorFor(m => Model.SaleDate)
+                    </td>
+                    <td>
+                        <label>Gross</label><br>
+                        @Html.EditorFor(m => Model.Deal.payablegross, new { @class = "form-control"})
+                    </td>
+                    <td>
+                        <label>Holdback</label><br>
+                        @Html.EditorFor(m => Model.Deal.holdback, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        <label>Front End Gross</label><br>
+                        @Html.EditorFor(m => Model.Deal.frontendgross)
+                    </td>
+                </tr>
+        </table>
+        <br />
+    </div>
+    <div style="border: 1px solid lightgray;">
+        <h4>Trade 1 Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Trade</label><br>
+                    @Html.CheckBoxFor(m => Model.Deal.trade1status)
+                </td>
+                <td>
+                    <label>Make</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade1make,
+                new SelectList(
+                    Model.Makes.ToList(),
+                    "MakeId",
+                    "Make1"),
+                "", new { @class = "form-control" }
+                    )
+                </td>
+                <td>
+                    <label>Model</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade1model,
+                new SelectList(
+                    Model.VehicleModels.ToList(),
+                    "ModelId",
+                    "Model1"),
+                "", new { @class = "form-control" }
+                    )
+                </td>
+                <td>
+                    <label>Other Make</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1makeother)
+                </td>
+                <td>
+                    <label>Other Model</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1modelother)
+                </td>
+                <td>
+                    <label>Year</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade1year,
+                    new SelectList(
+                        Model.Years.ToList(), Model.Deal.trade1year))
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mileage</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1mileage)
+                </td>
+                <td>
+                    <label>Intent of Trade</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade1intent,
+                   new List<SelectListItem>()
+                   {
+                       new SelectListItem() {Text = "", Value = "", Selected = (Model.Deal.trade1intent == null || Model.Deal.trade1intent == ""? true : false) },
+                       new SelectListItem {Text = "Retail", Value = "Retail", Selected = (Model.Deal.trade1intent.ToUpper() == "RETAIL" ? true : false) },
+                       new SelectListItem {Text = "Wholesale", Value = "Wholesale", Selected = (Model.Deal.trade1intent.ToUpper() == "WHOLESALE" ? true : false) }
+                   })
+                </td>
+                <td>
+                    <label>Title</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade1title,
+                    new List<SelectListItem>()
+                   {
+                       new SelectListItem() {Text = "", Value = "-1", Selected = (Model.Deal.trade1title == "-1"? true : false) },
+                       new SelectListItem {Text = "No", Value = "0", Selected = (Model.Deal.trade1title == "0" ? true : false) },
+                       new SelectListItem {Text = "Yes", Value = "1", Selected = (Model.Deal.trade1title == "1" ? true : false) }
+                   })
+
+                </td>
+                <td>
+                    <label>Payoff Lien Holder</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1lien)
+                </td>
+                <td>
+                    <label>ACV</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1acv)
+                </td>
+                <td>
+                    <label>Payoff</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1payoff)
+                </td>
+                <td>
+                    <label>Equity</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade1equity)
+                </td>
+            </tr>   
+        </table><br />
+        <h4>Trade 2 Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Trade</label><br>
+                    @Html.CheckBoxFor(m => Model.Deal.trade2status, new { @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Make</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade2make,
+               new SelectList(
+                   Model.Makes.ToList(),
+                   "MakeId",
+                   "Make1"),
+               "", new { @class = "form-control", @disabled = "readonly" }
+                   )
+                </td>
+                <td>
+                    <label>Model</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade2model,
+               new SelectList(
+                   Model.VehicleModels.ToList(),
+                   "ModelId",
+                   "Model1"),
+               "", new { @class = "form-control", @disabled = "readonly" }
+                   )
+                </td>
+                <td>
+                    <label>Other Make</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2makeother, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Other Model</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2modelother, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Year</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade2year,
+                   new SelectList(
+                       Model.Years.ToList(), Model.Deal.trade2year), new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mileage</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2mileage, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Intent of Trade</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade2intent,
+                   new List<SelectListItem>()
+                   {
+                       new SelectListItem() {Text = "", Value = "", Selected = (Model.Deal.trade2intent == null || Model.Deal.trade2intent == ""? true : false) },
+                       new SelectListItem {Text = "Retail", Value = "Retail", Selected = (Model.Deal.trade2intent.ToUpper() == "RETAIL" ? true : false) },
+                       new SelectListItem {Text = "Wholesale", Value = "Wholesale", Selected = (Model.Deal.trade2intent.ToUpper() == "WHOLESALE" ? true : false) }
+                   }, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Title</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.trade2title,
+                    new List<SelectListItem>()
+                   {
+                       new SelectListItem() {Text = "", Value = "-1", Selected = (Model.Deal.trade2title == "-1"? true : false) },
+                       new SelectListItem {Text = "No", Value = "0", Selected = (Model.Deal.trade2title == "0" ? true : false) },
+                       new SelectListItem {Text = "Yes", Value = "1", Selected = (Model.Deal.trade2title == "1" ? true : false) }
+                   }, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Payoff Lien Holder</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2lien, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>ACV</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2acv, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Payoff</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2payoff, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+                <td>
+                    <label>Equity</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.trade2equity, new { @class = "form-control", @readonly = "readonly" })
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    <br />
+    <div>
+        <table width="100%">
+            <tr>
+                    <td>
+                        <label>Sales Manager </label> @Html.DropDownListFor(m => Model.Deal.salesmanager,
+               new SelectList(
+                   Model.SalesManagers.ToList(),
+                   "SMID",
+                   "SMName"),
+               "", new { @class = "form-control"}
+                   )
+                    </td>
+                    <td><label>Sales Person</label></td>
+                    <td>
+                        <label>Name - </label>@Html.DropDownListFor(m => Model.Deal.salesperson1,
+               new SelectList(
+                   Model.SalesPeople.ToList(),
+                   "ID",
+                   "SPName"),
+               "", new { @class = "form-control"}
+
+                   )&nbsp;<label>Percentage </label>@Html.TextBoxFor(m => Model.Deal.salesperson1per, new { @class = "form-control"})<br />
+
+                <label>Name - </label>@Html.DropDownListFor(m => Model.Deal.salesperson2,
+               new SelectList(
+                   Model.SalesPeople.ToList(),
+                   "ID",
+                   "SPName"),
+               "", new { @class = "form-control"}
+
+                   )&nbsp;<label>Percentage </label>@Html.TextBoxFor(m => Model.Deal.salesperson2per, new { @class = "form-control" })<br />
+
+                <label>Name - </label>@Html.DropDownListFor(m => Model.Deal.salesperson3,
+               new SelectList(
+                   Model.SalesPeople.ToList(),
+                   "ID",
+                   "SPName"),
+               "", new { @class = "form-control" }
+
+                   )&nbsp;<label>Percentage </label>@Html.TextBoxFor(m => Model.Deal.salesperson3per, new { @class = "form-control" })<br />
+            </td>
+        </tr>
+        </table>
+    </div>
+    <br />
+    <div style="border: 1px solid lightgray;">
+        <h4>Finance Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Finance Manager</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.fimanager,
+            new SelectList(
+                Model.FinanceManagers.ToList(),
+                "FMID",
+                "FMName"),
+            "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Finance Type</label><br>
+                    @Html.DropDownListFor(m => Model.Deal.fitype,
+            new SelectList(
+                Model.FinanceTypes.ToList(),
+                "FinanceTypeId",
+                "FinanceType1"),
+            "", new { @class = "form-control" }
+                )
+                </td>
+                <td>
+                    <label>Payment In</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.fipaymentin)
+                </td>
+                <td>
+                    <label>Payment Out</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.fipaymentout)
+                </td>
+                <td>
+                    <label>Term In</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.fitermin)
+                </td>
+                <td>
+                    <label>Term Out</label><br>
+                    @Html.TextBoxFor(m => Model.Deal.fitermout)
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        <label>Cash Down</label><br>
+                        @Html.TextBoxFor(m => Model.Deal.ficashdown)
+                    </td>
+                    <td>
+                        <label>Lien Holder</label><br>
+                        @Html.DropDownListFor(m => Model.Deal.lienholder,
+               new SelectList(
+                   Model.LienHolders.ToList(),
+                   "DORLienHolderId",
+                   "DORLienHolder1"),
+               "", new { @class = "form-control" }
+                   )
+                    </td>
+                    <td>
+                        <label>Delivery Date</label><br>
+                        @Html.EditorFor(m => Model.DeliveryDate)
+                    </td>
+                    <td>
+                        <label>Grade Credit List</label><br>
+                        @Html.DropDownListFor(m => Model.Deal.gradecreditid,
+                   new SelectList(
+                       Model.GradeCredits.ToList(),
+                       "GradeId",
+                       "Grade"),
+               "", new { @class = "form-control" }
+                       )
+                    </td>
+                    <td>
+                        <label>Grade Credit</label><br>
+                        @Html.TextBoxFor(m => Model.Deal.gradecreditid)
+                    </td>
+                    <td>
+                        <label>Date To Accounting</label><br>
+                        <div>
+                            @Html.EditorFor(m => Model.DateToAccounting)
+                        </div>
+
+                    </td>
+                </tr>
+        </table>
+        <br />
+    </div>
+    <hr />
+    <div>
+        <table width="100%">
+            <tr>
+                <td>
+                    After Market Products<br />
+                    <table width="100%">
+                        <tr>
+                            <td><label>GAP Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.gap)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Enviro Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.enviro)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Etch Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.etch)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Dent Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.dent)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Maint Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.Maint)</td>
+                        </tr>
+                        <tr>
+                            <td><label>SmartNote Amount</label></td>
+                            <td><input type="text" size="20" /></td>
+                        </tr>
+                        <tr>
+                            <td><label>Tire & Wheel Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.tirewheel)</td>
+                        </tr>
+                        <tr>
+                            <td><label>TBD Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.TBD)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    Product Index<br />
+                    <table width="100%">
+                        <tr>
+                            <td><label>Credit Life Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.cl)</td>
+                        </tr>
+                        <tr>
+                            <td><label>A & H Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.ah)</td>
+                        </tr>
+                        <tr>
+                            <td><label>VSC @Html.TextBoxFor(m => Model.Deal.vscoption) Amount</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.vsc)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><label>Finance Reserve</label></td>
+                            <td>@Html.TextBoxFor(m => Model.Deal.finresv)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Backend Gross</label></td>
+                            <td>@Html.EditorFor(m => Model.Deal.backend)</td>
+                        </tr>
+                        <tr>
+                            <td><label>Total Gross</label></td>
+                            <td>@Html.EditorFor(m => Model.Deal.totalgross)</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table><br />
+    </div>
+    <hr />
+    <div>
+        <h4>Accounting Information</h4>
+        <table width="100%">
+            <tr>
+                <td>
+                    <label>Date To Accounting</label><br />
+                    @Html.EditorFor(m => Model.DateToAccounting)
+                </td>
+                <td>
+                    <label>Booked Date</label><br />
+                    @Html.EditorFor(m => Model.BookedDate)
+                </td>
+                <td>
+                    <label>Date To Tag</label><br />
+                    @Html.EditorFor(m => Model.DateToTag)
+                </td>
+                <td>
+                    <label>Date to Bank</label><br />
+                    @Html.EditorFor(m => Model.DateToBank)
+                </td>
+                <td>
+                    <label>Date Paid</label><br />
+                    @Html.EditorFor(m => Model.DatePaid)
+                </td>
+            </tr>
+        </table><br />
+        <div style="width: 100%; text-align: center">
+            <input type="submit" value="Update Deal" style="width: 200px" />
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var updateAll = true;
+        if ($("#IsCurrentMonth").val() || $("#IsAdmin").val()) //Still Current Month or the user is an Admin.  Can Update Everything
+        {
+            var updateAll = false;
+        }
+
+        SetUpdateStatus("#Deal_buyerlname", updateAll);
+        SetUpdateStatus("#Deal_buyerfname", updateAll);
+        SetUpdateStatus("#Deal_cobuyerlname", updateAll);
+        SetUpdateStatus("#Deal_cobuyerfname", updateAll);
+        SetUpdateStatus("#Deal_vehicleid", updateAll);
+        SetUpdateStatus("#Deal_vehicletypeid", updateAll);
+        SetUpdateStatus("#Deal_businesssource", updateAll);
+        SetUpdateStatus("#Deal_salescategory", updateAll);
+        //SetUpdateStatus("#Deal_status", updateAll);
+        SetUpdateStatus("#Deal_intent", updateAll);
+        SetUpdateStatus("#Deal_turnoption", updateAll);
+        SetUpdateStatus("#Deal_otherbusinesssource", updateAll);
+        //SetUpdateStatus("#Deal_daysinstock", updateAll);
+        SetUpdateStatus("#Deal_dealnum", updateAll);
+        SetUpdateStatus("#Deal_stocknum", updateAll);
+        SetUpdateStatus("#Deal_make", updateAll);
+        SetUpdateStatus("#Deal_model", updateAll);
+        SetUpdateStatus("#Deal_makeother", updateAll);
+        SetUpdateStatus("#Deal_modelother", updateAll);
+        SetUpdateStatus("#Deal_year", updateAll);
+        SetUpdateStatus("#Deal_mileage", updateAll);
+        SetUpdateStatus("#SaleDate", updateAll);
+        //SetUpdateStatus("#Deal_payablegross", updateAll);
+        //SetUpdateStatus("#Deal_holdback", updateAll);
+        SetUpdateStatus("#Deal_trade1status", updateAll);
+        SetUpdateStatus("#Deal_trade2status", updateAll);
+        SetUpdateStatus("#Deal_salesmanager", updateAll);
+        SetUpdateStatus("#Deal_salesperson1", updateAll);
+        SetUpdateStatus("#Deal_salesperson1per", updateAll);
+        SetUpdateStatus("#Deal_salesperson2", updateAll);
+        SetUpdateStatus("#Deal_salesperson2per", updateAll);
+        SetUpdateStatus("#Deal_salesperson3", updateAll);
+        SetUpdateStatus("#Deal_salesperson3per", updateAll);
+        SetUpdateStatus("#Deal_fimanager", updateAll);
+        SetUpdateStatus("#Deal_fitype", updateAll);
+        SetUpdateStatus("#Deal_fipaymentin", updateAll);
+        SetUpdateStatus("#Deal_fipaymentout", updateAll);
+        SetUpdateStatus("#Deal_fitermin", updateAll);
+        SetUpdateStatus("#Deal_fitermout", updateAll);
+        SetUpdateStatus("#Deal_ficashdown", updateAll);
+        SetUpdateStatus("#Deal_delvdate", updateAll);
+        SetUpdateStatus("#Deal_gradecreditid", updateAll);
+
+        ChangeTrade1Fields(false);
+        ChangeTrade2Fields(false);
+        $("#Deal_frontendgross").prop("disabled", true);
+        $("#Deal_backend").prop("disabled", true);
+        $("#Deal_totalgross").prop("disabled", true);
+
+        if (updateAll)
+        {
+            $('#Deal_trade1status').change(function () { ChangeTrade1Fields(); });
+            $('#Deal_trade2status').change(function () { ChangeTrade2Fields(); });
+        }
+
+        $("#Deal_payablegross").keyup(CalcFE);
+        $("#Deal_holdback").keyup(CalcFE);
+        // $("#Deal_frontendgross").keyup(CalcBE);
+        $("#Deal_finresv").keyup(CalcBE);
+    });
+
+    function SetUpdateStatus(fieldname, status) {
+        $(fieldname).prop("disabled", status);
+    }
+
+    function CalcFE() {
+        var pg = parseFloat($("#Deal_payablegross").val()) || 0.00;
+        var hb = parseFloat($("#Deal_holdback").val())||0.00;
+
+        $("#Deal_frontendgross").val(pg - hb);
+
+        CalcTotalGross();
+    }
+
+    function CalcBE() {
+        var gap = parseInt($("#Deal_gap").val()) || 0;
+        var enviro = parseInt($("#Deal_enviro").val()) || 0;
+        var etch = parseInt($("#Deal_etch").val()) || 0;
+        var dent = parseInt($("Deal_dent").val()) || 0;
+        var maint = parseInt($("#Deal_maint").val()) || 0;
+        var tw = parseInt($("#Deal_tirewheel").val()) || 0;
+        var tbd = parseInt($("#Deal_tbd").val()) || 0;
+        var cl = parseInt($("#Deal_cl").val()) || 0;
+        var ah = parseInt($("#Deal_ah").val()) || 0;
+        var vsc = parseInt($("#Deal_vsc").val()) || 0;
+        var finresv = parseInt($("#Deal_finresv").val()) || 0;
+
+        $("#Deal_backend").val(gap + enviro + etch + dent + maint + tw + tbd + cl + ah + vsc + finresv);
+        CalcTotalGross();
+    }
+
+    function CalcTotalGross()
+    {
+        var fe = parseInt($("#Deal_frontendgross").val()) || 0;
+        var be = parseInt($("#Deal_backend").val()) || 0;
+        $("#Deal_totalgross").val(fe + be);
+    }
+
+    function ChangeTrade1Fields()
+    {
+        var status = !document.getElementById('Deal_trade1status').checked;
+        $("#Deal_trade1make").prop("disabled", status);
+        $("#Deal_trade1model").prop("disabled", status);
+        $("#Deal_trade1makeother").prop("disabled", status);
+        $("#Deal_trade1modelother").prop("disabled", status);
+        $("#Deal_trade1year").prop("disabled", status);
+        $("#Deal_trade1mileage").prop("disabled", status);
+        $("#Deal_trade1intent").prop("disabled", status);
+        $("#Deal_trade1title").prop("disabled", status);
+        $("#Deal_trade1lien").prop("disabled", status);
+        $("#Deal_trade1acv").prop("disabled", status);
+        $("#Deal_trade1payoff").prop("disabled", status);
+        $("#Deal_trade1equity").prop("disabled", status);
+
+        if (!status)
+        {
+            $("#Deal_trade1makeother").val("");
+            $("#Deal_trade1modelother").val("");
+            $("#Deal_trade1mileage").val("");
+            $("#Deal_trade1lien").val("");
+            $("#Deal_trade1acv").val("");
+            $("#Deal_trade1payoff").val("");
+            $("#Deal_trade1equity").val("");
+        }
+    }
+
+    function ChangeTrade2Fields(status) {
+        var status = !document.getElementById('Deal_trade2status').checked;
+        $("#Deal_trade2make").prop("disabled", status);
+        $("#Deal_trade2model").prop("disabled", status);
+        $("#Deal_trade2makeother").prop("disabled", status);
+        $("#Deal_trade2modelother").prop("disabled", status);
+        $("#Deal_trade2year").prop("disabled", status);
+        $("#Deal_trade2mileage").prop("disabled", status);
+        $("#Deal_trade2intent").prop("disabled", status);
+        $("#Deal_trade2title").prop("disabled", status);
+        $("#Deal_trade2lien").prop("disabled", status);
+        $("#Deal_trade2acv").prop("disabled", status);
+        $("#Deal_trade2payoff").prop("disabled", status);
+        $("#Deal_trade2equity").prop("disabled", status);
+
+        if (!status) {
+            $("#Deal_trade2makeother").val("");
+            $("#Deal_trade2modelother").val("");
+            $("#Deal_trade2mileage").val("");
+            $("#Deal_trade2lien").val("");
+            $("#Deal_trade2acv").val("");
+            $("#Deal_trade2payoff").val("");
+            $("#Deal_trade2equity").val("");
+        }
+    }
+
+</script>
+

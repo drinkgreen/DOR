@@ -1,0 +1,5 @@
+E:\Repos\Holodeck\DORv3\DORv3.Helpers\bin\Debug\DORv3.HelperLib.dll
+E:\Repos\Holodeck\DORv3\DORv3.Helpers\bin\Debug\DORv3.HelperLib.pdb
+E:\Repos\Holodeck\DORv3\DORv3.Helpers\obj\Debug\DORv3.HelperLib.csprojResolveAssemblyReference.cache
+E:\Repos\Holodeck\DORv3\DORv3.Helpers\obj\Debug\DORv3.HelperLib.dll
+E:\Repos\Holodeck\DORv3\DORv3.Helpers\obj\Debug\DORv3.HelperLib.pdb

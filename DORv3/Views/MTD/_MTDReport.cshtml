@@ -1,0 +1,14 @@
+﻿@model DORv3.Models.ViewModels.MTDViewModel
+
+<table>
+    @foreach(var record in Model.MTDReport.ToList())
+    {
+        <tr>
+            @*<th>@Html.RenderPartial("SmartLink", Model, new ViewDataDictionary { { "ColumnName", "ProductName" }, { "DisplayName", "Product" } });</th>
+            <th>@Html.RenderPartial("SmartLink", Model, new ViewDataDictionary { { "ColumnName", "Category.CategoryName" }, { "DisplayName", "Category" } });</th>
+            <th>@Html.RenderPartial("SmartLink", Model, new ViewDataDictionary { { "ColumnName", "QuantityPerUnit" }, { "DisplayName", "Qty/Unit" } });</th>
+            <th>@Html.RenderPartial("SmartLink", Model, new ViewDataDictionary { { "ColumnName", "UnitPrice" }, { "DisplayName", "Price" } });</th>
+            <th>@Html.RenderPartial("SmartLink", Model, new ViewDataDictionary { { "ColumnName", "Discontinued" }, { "DisplayName" , "Discontinued" } });</th>*@
+        </tr>
+    }
+</table>

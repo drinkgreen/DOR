@@ -1,0 +1,435 @@
+﻿
+@{
+    ViewBag.Title = "Input Screen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Deal</h2>
+
+<div style="border: 1px solid lightgray;">
+    <h4>Customer Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Buyer Last Name</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Buyer First Name</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Co-Buyer Last Name</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Co-Buyer First Name</label><br />
+                <input type="text" size="25" />
+            </td>
+        </tr>
+    </table><br />
+</div>
+<div style="border: 1px solid lightgray;">
+    <h4>Sale Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Vehicle</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Vehicle Type</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Business Source</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Sale Category</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Status</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Intent</label><br>
+                <input type="text" size="20" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Turn Option</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+            </td>
+            <td>
+                <label>Other Business Source</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+            </td>
+            <td>
+                <label>Days in Stock</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Deal Number</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Stock Number</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Make</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Model</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Other Make</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Other Model</label><br>
+                <input type="text" size="20" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Year</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Mileage</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Sale Date</label><br />
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Gross</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Holdback</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Front End Gross</label><br>
+                <input type="text" size="20" />
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<div style="border: 1px solid lightgray;">
+    <h4>Trade 1 Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Trade</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Make</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Model</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Other Make</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Other Model</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Year</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Mileage</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Intent of Trade</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Title</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Payoff Lien Holder</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>ACV</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Payoff</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Equity</label><br>
+                <input type="text" size="15" />
+            </td>
+        </tr>
+    </table><br />
+    <h4>Trade 2 Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Trade</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Make</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Model</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Other Make</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Other Model</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Year</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Mileage</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Intent of Trade</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Title</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Payoff Lien Holder</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>ACV</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Payoff</label><br>
+                <input type="text" size="15" />
+            </td>
+            <td>
+                <label>Equity</label><br>
+                <input type="text" size="15" />
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<br />
+<div>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Sales Manager </label> <input type="text" size="30" />
+            </td>
+            <td><label>Sales Person</label></td>
+            <td>
+                <label>Name - </label><input type="text" size="50" />&nbsp;<label>Percentage </label><input type="text" size="10" /><br />
+                <label>Name - </label><input type="text" size="50" />&nbsp;<label>Percentage </label><input type="text" size="10" /><br />
+                <label>Name - </label><input type="text" size="50" />&nbsp;<label>Percentage </label><input type="text" size="10" /><br />
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<div style="border: 1px solid lightgray;">
+    <h4>Finance Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Finance Manager</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Finance Type</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Payment In</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Payment Out</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Term In</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Term Out</label><br>
+                <input type="text" size="20" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Cash Down</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Lien Holder</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Delivery Date</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Grade Credit List</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Grade Credit</label><br>
+                <input type="text" size="20" />
+            </td>
+            <td>
+                <label>Date To Accounting</label><br>
+                <input type="text" size="20" />
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<hr />
+<div>
+    <table width="100%">
+        <tr>
+            <td>After Market Products<br />
+                <table width="100%">
+                    <tr>
+                        <td><label>GAP Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Enviro Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Etch Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Dent Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Maint Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>SmartNote Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Tire & Wheel Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>TBD Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                </table>
+            </td>
+            <td>Product Index<br />
+                <table width="100%">
+                    <tr>
+                        <td><label>Credit Life Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>A & H Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>VSC <input type="text" size="15" /> Amount</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label>Finance Reserve</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Backend Gross</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Total Gross</label></td>
+                        <td><input type="text" size="20" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table><br />
+</div>
+<hr />
+<div>
+    <h4>Accounting Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Date To Accounting</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Booked Date</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Date To Tag</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Date to Bank</label><br />
+                <input type="text" size="25" />
+            </td>
+            <td>
+                <label>Date Paid</label><br />
+                <input type="text" size="25" />
+            </td>
+        </tr>
+    </table><br />
+</div>

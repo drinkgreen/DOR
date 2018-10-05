@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FBFA822-5FA5-47EE-AA1E-B4E7FF715CD7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DORv3</RootNamespace>
+    <AssemblyName>DORv3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.93.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.93.1\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.3.0\lib\net45\FastMember.Signed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="QueryDesigner, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QueryDesigner.2.0.0\lib\net45\QueryDesigner.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MTDController.cs" />
+    <Compile Include="Controllers\RecapReportsController.cs" />
+    <Compile Include="Controllers\SalesboardController.cs" />
+    <Compile Include="Models\SearchObjects\DealerNumberSearchObject.cs" />
+    <Compile Include="Models\FilterFields\Base\MTDFilterField.cs" />
+    <Compile Include="Models\SearchObjects\Base\SearchObject.cs" />
+    <Compile Include="Models\FilterFields\MTD_BusinessSource.cs" />
+    <Compile Include="Models\FilterFields\MTD_FinanceManager.cs" />
+    <Compile Include="Models\FilterFields\MTD_SalesManager.cs" />
+    <Compile Include="Models\FilterFields\MTD_SalesPerson.cs" />
+    <Compile Include="Models\ViewModels\AddDealViewModel.cs" />
+    <Compile Include="Models\ViewModels\AdminAddUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\AdminViewModel.cs" />
+    <Compile Include="Models\ViewModels\DORViewModel.cs" />
+    <Compile Include="Models\ViewModels\UpdateDealViewModel.cs" />
+    <Compile Include="Domain\BUSINESSSOURCE.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Deal.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DealerShip.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DealsbyFinMgr.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DealsDetail.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DealStatu.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DOR1234Object.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DORHistory.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DORLienHolder.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DORProduct.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DOR_import.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FinanceManager.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FinanceRecapObject.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FinanceType.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FindUnwidDeal.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\finmgrfix.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\fn_GetWorkingDayCounts_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\fn_RecapReportMaster_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\fn_RecapSalesByFinType_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\fn_RecapUnAssignedProductTotals_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FowlerDOR.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FowlerDOR.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FowlerDOR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FowlerDOR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FowlerDOR.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\FowlerDORContext.cs" />
+    <Compile Include="Domain\Get_MTD_18_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Get_NU_Report_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Get_Salesboard_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\GradeCredit.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Make.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\MasterFI.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Model.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\MonthlyHistory.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\MonthToDateObject.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\mtd_holder.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\NU_ReportObject.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\OtherIncome.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\OtherProduct.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Role.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\RoleScreenXRef.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SalesboardObject.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SalesCategory.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SalesManager.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SalesPerson.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SalesRecapObject.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Screen.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Security.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\sp_GetDealsSummary_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\UserRoleXRef.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\usp_String_or_binary_data_truncated_Result.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Vehicle.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\VehicleType.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewBackout.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewBackoutsDetail.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewCashDealswithFinRe.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewDeal.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewDealswithoutsalesmgr.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewDORProduct.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewNonCashProdforCashDeal.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewScreenbytype.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewScreenTypeOrder.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewUnwindDateFix.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\viewUserRole.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\VSales_Recap.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Year.cs">
+      <DependentUpon>FowlerDOR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Attributes\SpecialAttributes.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
+    <Compile Include="Helpers\DORHelper.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Dealership.cs" />
+    <Compile Include="Models\FilterFields\Base\FilterField.cs" />
+    <Compile Include="Models\FilterFields\MTD_Dealerid.cs" />
+    <Compile Include="Models\FilterFields\MTD_DealStatus.cs" />
+    <Compile Include="Models\FilterFields\MTD_SalesCategory.cs" />
+    <Compile Include="Models\FilterFields\MTD_Vehicle.cs" />
+    <Compile Include="Models\FilterFields\MTD_VehicleType.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReportObjects\DOR1234.cs" />
+    <Compile Include="Models\ReportObjects\FinanceRecap.cs" />
+    <Compile Include="Models\ReportObjects\MTDRecap.cs" />
+    <Compile Include="Models\ReportObjects\NU_Recap.cs" />
+    <Compile Include="Models\ReportObjects\Salesboard.cs" />
+    <Compile Include="Models\ReportObjects\SalesRecap.cs" />
+    <Compile Include="Models\SalesboardDayOfWeek.cs" />
+    <Compile Include="Models\SalesboardRefinedObject.cs" />
+    <Compile Include="Models\ViewModels\DOR1234RecapViewModel.cs" />
+    <Compile Include="Models\ViewModels\FinanceRecapViewModel.cs" />
+    <Compile Include="Models\ViewModels\ListOfDealsViewModel.cs" />
+    <Compile Include="Models\ViewModels\MTDViewModel.cs" />
+    <Compile Include="Models\ViewModels\NU_ReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\SalesboardViewModel.cs" />
+    <Compile Include="Models\ViewModels\SalesRecapViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DORService.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\FowerautoLogo.png" />
+    <Content Include="Domain\FowlerDOR.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FowlerDOR.edmx</DependentUpon>
+      <LastGenOutput>FowlerDOR.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Domain\FowlerDOR.edmx.sql" />
+    <Content Include="Domain\FowlerDOR.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FowlerDOR.edmx</DependentUpon>
+      <LastGenOutput>FowlerDOR.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Domain\FowlerDOR.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FowlerDOR.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Domain\FowlerDOR.edmx.diagram">
+      <DependentUpon>FowlerDOR.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\MTD\Index.cshtml" />
+    <Content Include="Views\RecapReports\DOR1234Recap.cshtml" />
+    <Content Include="Views\RecapReports\NuReport.cshtml" />
+    <Content Include="Views\RecapReports\SalesRecap.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\RecapReports\SalesRecap_OLD.cshtml" />
+    <Content Include="Views\RecapReports\FinanceRecap.cshtml" />
+    <Content Include="Views\Salesboard\Index.cshtml" />
+    <Content Include="Views\RecapReports\TestReport.cshtml" />
+    <Content Include="Views\RecapReports\FinanceRecap_Test.cshtml" />
+    <Content Include="Views\RecapReports\DOR1234_Test.cshtml" />
+    <Content Include="Views\RecapReports\NuReport_TEST.cshtml" />
+    <Content Include="Views\Dashboard\Input.cshtml" />
+    <Content Include="Views\MTD\MTD.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Search.cshtml" />
+    <Content Include="Views\Dashboard\Adjust.cshtml" />
+    <Content Include="Views\Dashboard\Update.cshtml" />
+    <Content Include="Views\Dashboard\Details.cshtml" />
+    <Content Include="Views\Dashboard\Add.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AddUser.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\MTD\_MTDGrid.cshtml" />
+    <Content Include="Views\MTD\_MTDReport.cshtml" />
+    <Content Include="Views\MTD\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DORv3.BLL\DORv3.BLL.csproj">
+      <Project>{cc050e51-6980-4bca-9cd4-974695693e72}</Project>
+      <Name>DORv3.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DORv3.DAL\DORv3.DAL.csproj">
+      <Project>{393aba7d-10a1-4de2-b38b-6afe42b18ed0}</Project>
+      <Name>DORv3.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DORv3.Helpers\DORv3.HelperLib.csproj">
+      <Project>{ef435e72-b793-4655-bf2b-bada08c3c6a9}</Project>
+      <Name>DORv3.HelperLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52675</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52675/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

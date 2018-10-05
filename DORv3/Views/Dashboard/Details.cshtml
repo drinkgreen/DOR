@@ -1,0 +1,435 @@
+﻿@model DORv3.Models.ViewModels.UpdateDealViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deal #@Model.Deal.dealnum</h2>
+
+<div style="border: 1px solid lightgray;">
+    <h4>Customer Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Buyer Last Name: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.buyerlname)
+            </td>
+            <td>
+                <label>Buyer First Name: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.buyerfname)
+            </td>
+            <td>
+                <label>Co-Buyer Last Name: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.cobuyerlname)
+            </td>
+            <td>
+                <label>Co-Buyer First Name: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.cobuyerfname)
+            </td>
+        </tr>
+    </table><br />
+</div>
+<div style="border: 1px solid lightgray;">
+    <h4>Sale Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Vehicle: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.vehicle)
+            </td>
+            <td>
+                <label>Vehicle Type: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.vehicletype)
+            </td>
+            <td>
+                <label>Business Source: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.businesssource)
+            </td>
+            <td>
+                <label>Sale Category: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.salescategory)
+            </td>
+            <td>
+                <label>Status: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.status)
+            </td>
+            <td>
+                <label>Intent: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.intent)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Turn Option: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.turnoption)
+            </td>
+            <td></td>
+            <td>
+                <label>Other Business Source: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.otherbusinesssource)
+            </td>
+            <td></td>
+            <td>
+                <label>Days in Stock: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.daysinstock)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Deal Number: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.dealnum)
+            </td>
+            <td>
+                <label>Stock Number: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.stocknum)
+            </td>
+            <td>
+                <label>Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.make)
+            </td>
+            <td>
+                <label>Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.model)
+            </td>
+            <td>
+                <label>Other Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.makeother)
+            </td>
+            <td>
+                <label>Other Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.modelother)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Year: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.year)
+            </td>
+            <td>
+                <label>Mileage: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.mileage)
+            </td>
+            <td>
+                <label>Sale Date: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.salesdate)
+            </td>
+            <td>
+                <label>Gross: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.payablegross)
+            </td>
+            <td>
+                <label>Holdback: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.holdback)
+            </td>
+            <td>
+                <label>Front End Gross: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.frontendgross)
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<div style="border: 1px solid lightgray;">
+    <h4>Trade 1 Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Trade: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1status)
+            </td>
+            <td>
+                <label>Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1make)
+            </td>
+            <td>
+                <label>Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1model)
+            </td>
+            <td>
+                <label>Other Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1makeother)
+            </td>
+            <td>
+                <label>Other Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1modelother)
+            </td>
+            <td>
+                <label>Year: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1year)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Mileage: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1mileage)
+            </td>
+            <td>
+                <label>Intent of Trade: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1intent)
+            </td>
+            <td>
+                <label>Title: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1title)
+            </td>
+            <td>
+                <label>Payoff Lien Holder: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1lien)
+            </td>
+            <td>
+                <label>ACV: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1acv)
+            </td>
+            <td>
+                <label>Payoff: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1payoff)
+            </td>
+            <td>
+                <label>Equity: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade1equity)
+            </td>
+        </tr>
+    </table><br />
+    <h4>Trade 2 Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Trade: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2status)
+            </td>
+            <td>
+                <label>Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2make)
+            </td>
+            <td>
+                <label>Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2model)
+            </td>
+            <td>
+                <label>Other Make: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2makeother)
+            </td>
+            <td>
+                <label>Other Model: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2modelother)
+            </td>
+            <td>
+                <label>Year: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2year)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Mileage: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2mileage)
+            </td>
+            <td>
+                <label>Intent of Trade: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2intent)
+            </td>
+            <td>
+                <label>Title: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2title)
+            </td>
+            <td>
+                <label>Payoff Lien Holder: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2lien)
+            </td>
+            <td>
+                <label>ACV: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2acv)
+            </td>
+            <td>
+                <label>Payoff: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2payoff)
+            </td>
+            <td>
+                <label>Equity: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.trade2equity)
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<br />
+<div>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Sales Manager </label> @Html.DisplayFor(m => Model.Deal.salesmanager)
+            </td>
+            <td><label>Sales Person</label></td>
+            <td>
+                <label>Name - </label>@Html.DisplayFor(m => Model.Deal.salesperson1)&nbsp;<label>Percentage </label>@Html.DisplayFor(m => Model.Deal.salesperson1per)<br />
+                <label>Name - </label>@Html.DisplayFor(m => Model.Deal.salesperson2)&nbsp;<label>Percentage </label>@Html.DisplayFor(m => Model.Deal.salesperson2per)<br />
+                <label>Name - </label>@Html.DisplayFor(m => Model.Deal.salesperson3)&nbsp;<label>Percentage </label>@Html.DisplayFor(m => Model.Deal.salesperson3per)<br />
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<div style="border: 1px solid lightgray;">
+    <h4>Finance Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Finance Manager: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fimanager)
+            </td>
+            <td>
+                <label>Finance Type: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fitype)
+            </td>
+            <td>
+                <label>Payment In: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fipaymentin)
+            </td>
+            <td>
+                <label>Payment Out: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fipaymentout)
+            </td>
+            <td>
+                <label>Term In: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fitermin)
+            </td>
+            <td>
+                <label>Term Out: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.fitermout)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Cash Down: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.ficashdown)
+            </td>
+            <td>
+                <label>Lien Holder: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.lienholder)
+            </td>
+            <td>
+                <label>Delivery Date: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.delvdate)
+            </td>
+            <td>
+                <label>Grade Credit List: </label>&nbsp;
+                
+            </td>
+            <td>
+                <label>Grade Credit: </label>&nbsp;
+                
+            </td>
+            <td>
+                <label>Date To Accounting: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.datetoacct)
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+<hr />
+<div>
+    <table width="100%">
+        <tr>
+            <td>
+                After Market Products<br />
+                <table width="100%">
+                    <tr>
+                        <td><label>GAP Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.gap)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Enviro Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.enviro)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Etch Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.etch)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Dent Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.dent)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Maint Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.Maint)</td>
+                    </tr>
+                    <tr>
+                        <td><label>SmartNote Amount</label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label>Tire & Wheel Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.tirewheel)</td>
+                    </tr>
+                    <tr>
+                        <td><label>TBD Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.TBD)</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                Product Index<br />
+                <table width="100%">
+                    <tr>
+                        <td><label>Credit Life Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.cl)</td>
+                    </tr>
+                    <tr>
+                        <td><label>A & H Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.ah)</td>
+                    </tr>
+                    <tr>
+                        <td><label>VSC @Html.DisplayFor(m => Model.Deal.vscoption) Amount</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.vsc)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label>Finance Reserve</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.finresv)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Backend Gross</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.backend)</td>
+                    </tr>
+                    <tr>
+                        <td><label>Total Gross</label></td>
+                        <td>@Html.DisplayFor(m => Model.Deal.totalgross)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table><br />
+</div>
+<hr />
+<div>
+    <h4>Accounting Information</h4>
+    <table width="100%">
+        <tr>
+            <td>
+                <label>Date To Accounting: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.datetoacct)
+            </td>
+            <td>
+                <label>Booked Date: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.bookeddate)
+            </td>
+            <td>
+                <label>Date To Tag: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.datetotag)
+            </td>
+            <td>
+                <label>Date to Bank: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.datetobank)
+            </td>
+            <td>
+                <label>Date Paid: </label>&nbsp;
+                @Html.DisplayFor(m => Model.Deal.datepaid)
+            </td>
+        </tr>
+    </table><br />
+</div>

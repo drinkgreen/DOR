@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QueryDesignerCore</name>
+    </assembly>
+    <members>
+        <member name="T:QueryDesignerCore.FilterContainer">
+            <summary>
+            Container for filters.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.FilterContainer.#ctor">
+            <summary>
+            Container for filters.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.FilterContainer.Where">
+            <summary>
+            Where filters.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.FilterContainer.OrderBy">
+            <summary>
+            Order filters.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.FilterContainer.Skip">
+            <summary>
+            Skip number of elements.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.FilterContainer.Take">
+            <summary>
+            Take number of elements.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.OrderFilter">
+            <summary>
+            Sort by the field.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.OrderFilter.#ctor">
+            <summary>
+            Sort by the field.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.OrderFilter.Field">
+            <summary>
+            Sort field name.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.OrderFilter.Order">
+            <summary>
+            Sorting order.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.OrderFilterType">
+            <summary>
+            Sorting order.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.OrderFilterType.Asc">
+            <summary>
+            Ascending.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.OrderFilterType.Desc">
+            <summary>
+            Descending.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.QueryableExtensions">
+            <summary>
+            Override Quaryable functions.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Request``1(System.Linq.IQueryable{``0},QueryDesignerCore.FilterContainer)">
+            <summary>
+            FilterContainer expression.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="request">Container for filters.</param>
+            <returns>Performed query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Request``1(System.Collections.Generic.IEnumerable{``0},QueryDesignerCore.FilterContainer)">
+            <summary>
+            FilterContainer expression.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="request">Container for filters.</param>
+            <returns>Performed query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Where``1(System.Linq.IQueryable{``0},QueryDesignerCore.WhereFilter)">
+            <summary>
+            Filtration items based on a given WhereFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="filter">Filter for queryable expression.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Filtered query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Where``1(System.Collections.Generic.IEnumerable{``0},QueryDesignerCore.WhereFilter)">
+            <summary>
+            Filtration items based on a given WhereFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="filter">Filter for queryable expression.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Filtered query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Where``1(System.Linq.IQueryable{``0},QueryDesignerCore.TreeFilter)">
+            <summary>
+            Filtration items based on a given TreeFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="filter">Tree filter for queryable expression.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Filtered query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.Where``1(System.Collections.Generic.IEnumerable{``0},QueryDesignerCore.TreeFilter)">
+            <summary>
+            Filtration items based on a given TreeFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="filter">Tree filter for queryable expression.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Filtered query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.OrderBy``1(System.Linq.IQueryable{``0},QueryDesignerCore.OrderFilter)">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="filter">Sort filter.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},QueryDesignerCore.OrderFilter)">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="filter">Sort filter.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.ThenBy``1(System.Linq.IQueryable{``0},QueryDesignerCore.OrderFilter)">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="filter">Sort filter.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.ThenBy``1(System.Collections.Generic.IEnumerable{``0},QueryDesignerCore.OrderFilter)">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="filter">Sort filter.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.OrderBy``1(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{QueryDesignerCore.OrderFilter})">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">Integrable request.</param>
+            <param name="filters">Enumeration of sort filters.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.QueryableExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{QueryDesignerCore.OrderFilter})">
+            <summary>
+            Sorting items based on a given OrderFilter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="query">An enumerated request.</param>
+            <param name="filters">Enumeration of sort filters.</param>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.InvalidCastException" />
+            <exception cref="T:System.InvalidOperationException" />
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="T:QueryDesignerCore.TreeFilter">
+            <summary>
+            Filters with infinite nesting and boolean operations therebetween.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.TreeFilter.#ctor">
+            <summary>
+            Filters with infinite nesting and boolean operations therebetween.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.TreeFilter.OperatorType">
+            <summary>
+            Type of logical operator.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.TreeFilter.Operands">
+            <summary>
+            Operands of boolean expressions.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.TreeFilterType">
+            <summary>
+            Type of operation.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.TreeFilterType.None">
+            <summary>
+            This is not operation.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.TreeFilterType.And">
+            <summary>
+            And operation.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.TreeFilterType.Or">
+            <summary>
+            Or operation.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.WhereFilter">
+            <summary>
+            Tree filter for queryable expression.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.WhereFilter.#ctor">
+            <summary>
+            Tree filter for queryable expression.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.WhereFilter.Field">
+            <summary>
+            Filter field name.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.WhereFilter.FilterType">
+            <summary>
+            Type of field filtration.
+            </summary>
+        </member>
+        <member name="P:QueryDesignerCore.WhereFilter.Value">
+            <summary>
+            Value for filtering.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.WhereFilterType">
+            <summary>
+            Type of elements comparison.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.None">
+            <summary>
+            The field is not a filtered.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.Equal">
+            <summary>
+            The field is equal to the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.NotEqual">
+            <summary>
+            The field is not equal to the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.LessThan">
+            <summary>
+            The field is less than the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.GreaterThan">
+            <summary>
+            The field is greater than the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.LessThanOrEqual">
+            <summary>
+            Field is less than or equal to value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.GreaterThanOrEqual">
+            <summary>
+            The field is greater than or equal to the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.Contains">
+            <summary>
+            The field is contains the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.NotContains">
+            <summary>
+            The field is not contains the value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.StartsWith">
+            <summary>
+            The field is start with value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.NotStartsWith">
+            <summary>
+            The field is not start with value.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.Any">
+            <summary>
+            Collection contains data.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.WhereFilterType.NotAny">
+            <summary>
+            Collection not contains data.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.Expressions.OrderExpression">
+            <summary>
+            Constructor expressions for OrderBy and ThenBy methods.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderExpression.QueryableType">
+            <summary>
+            Queryable type.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderExpression.QueryableOrderBy">
+            <summary>
+            OrderBy method.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderExpression.QueryableOrderByDescending">
+            <summary>
+            OrderBy desc method.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderExpression.QueryableThenBy">
+            <summary>
+            ThenBy method.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderExpression.QueryableThenByDescending">
+            <summary>
+            ThenBy desc method.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.OrderExpression.GetOrderedQueryable``1(QueryDesignerCore.OrderFilter,System.Linq.IQueryable{``0},QueryDesignerCore.Expressions.OrderStep)">
+            <summary>
+            Perform data sorting.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="filter">.</param>
+            <param name="data">Data for sort.</param>
+            <param name="step">Step number.</param>
+            <returns>Sorted query.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.OrderExpression.GetDeclaringProperty(System.Type,System.String)">
+            <summary>
+            Get property from class in which it is declared.
+            </summary>
+            <param name="t">Type of entity.</param>
+            <param name="name">Name of property.</param>
+            <returns>Property info.</returns>
+        </member>
+        <member name="T:QueryDesignerCore.Expressions.OrderStep">
+            <summary>
+            Sorting step.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderStep.First">
+            <summary>
+            For OrderBy.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.OrderStep.Next">
+            <summary>
+            For ThenBy.
+            </summary>
+        </member>
+        <member name="T:QueryDesignerCore.Expressions.WhereExpression">
+            <summary>
+            Constructor expressions for Where methods.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.StringType">
+            <summary>
+            String type.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.ExpType">
+            <summary>
+            Expression type.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.QueryableType">
+            <summary>
+            Queryable type.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.AndExpMethod">
+            <summary>
+            Binary AndAlso method for expression.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.OrExpMethod">
+            <summary>
+            Binary OrElse method for expression.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.StartsMethod">
+            <summary>
+            Info about "StartsWith" method.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.ContainsMethod">
+            <summary>
+            Info about "Contains" method.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.AsQueryableMethod">
+            <summary>
+            Info about AsQueryableMethod.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.CollectionAny">
+            <summary>
+            Info about "Any" method with one parameter for collection.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.CollectionAny2">
+            <summary>
+            Info about "Any" method with two parameter for collection.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.ExpressionMethod">
+            <summary>
+            Info about method of constructing expressions.
+            </summary>
+        </member>
+        <member name="F:QueryDesignerCore.Expressions.WhereExpression.AvailableCastTypes">
+            <summary>
+            Available types for conversion.
+            </summary>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GetExpression``1(QueryDesignerCore.WhereFilter,System.String)">
+            <summary>
+            Get final expression for filter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="filter">Filter for query.</param>
+            <param name="suffix">Suffix vor variable.</param>
+            <returns>Final expression.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GetTreeExpression``1(QueryDesignerCore.TreeFilter,System.String)">
+            <summary>
+            Get final expression for tree filter.
+            </summary>
+            <typeparam name="T">Return type.</typeparam>
+            <param name="filter">Tree filter for query.</param>
+            <param name="suffix">Suffix vor variable.</param>
+            <returns>Final expression.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GetExpressionForTreeField(System.Linq.Expressions.Expression,QueryDesignerCore.TreeFilter,System.String)">
+            <summary>
+            Construct expressions chain for tree filter.
+            </summary>
+            <param name="e">Parameter expression.</param>
+            <param name="filter">Tree filter for query.</param>
+            <param name="suffix">Suffix vor variable.</param>
+            <returns>Expression chain.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GetExpressionForField(System.Linq.Expressions.Expression,QueryDesignerCore.WhereFilter,System.String)">
+            <summary>
+            Construct expressions chain between WhereFilters.
+            </summary>
+            <param name="e">Parameter expression.</param>
+            <param name="filter">Tree filter for query.</param>
+            <param name="suffix">Suffix vor variable.</param>
+            <returns>Expression chain.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GenerateExpressionOneField(System.Linq.Expressions.Expression,QueryDesignerCore.WhereFilter)">
+            <summary>
+            Construct bool-expression between different expression and a filter.
+            </summary>
+            <param name="prop">Different expression.</param>
+            <param name="filter">Filter for query.</param>
+            <returns>Expression with filter.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.TryCastFieldValueType(System.Object,System.Type)">
+            <summary>
+            Value type filter field conversion.
+            </summary>
+            <param name="value">Filter value.</param>
+            <param name="type">Conversion to type.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.AsQueryable(System.Linq.Expressions.Expression)">
+            <summary>
+            Cast IEnumerable to IQueryable.
+            </summary>
+            <param name="prop">IEnumerable expression</param>
+            <returns>IQueryable expression.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.IsEnumerable(System.Linq.Expressions.Expression)">
+            <summary>
+            Expression type is IEnumerable.
+            </summary>
+            <param name="prop">Verifiable expression.</param>
+            <returns>Result of checking.</returns>
+        </member>
+        <member name="M:QueryDesignerCore.Expressions.WhereExpression.GetDeclaringProperty(System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Get property from class in which it is declared.
+            </summary>
+            <param name="e">Parameter expression.</param>
+            <param name="name">Name of property.</param>
+            <returns>Property info.</returns>
+        </member>
+    </members>
+</doc>

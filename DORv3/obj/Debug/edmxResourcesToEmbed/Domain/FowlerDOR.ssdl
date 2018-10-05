@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FowlerDORModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FowlerDORModelStoreContainer">
+    <EntitySet Name="MasterFIs" EntityType="FowlerDORModel.Store.MasterFIs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BUSINESSSOURCEs" EntityType="FowlerDORModel.Store.BUSINESSSOURCEs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DealerShips" EntityType="FowlerDORModel.Store.DealerShips" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Deals" EntityType="FowlerDORModel.Store.Deals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DealsbyFinMgrs" EntityType="FowlerDORModel.Store.DealsbyFinMgrs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DealsDetails" EntityType="FowlerDORModel.Store.DealsDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DealStatus" EntityType="FowlerDORModel.Store.DealStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DOR_import" EntityType="FowlerDORModel.Store.DOR_import" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DORHistories" EntityType="FowlerDORModel.Store.DORHistories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DORLienHolders" EntityType="FowlerDORModel.Store.DORLienHolders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DORProducts" EntityType="FowlerDORModel.Store.DORProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FinanceManagers" EntityType="FowlerDORModel.Store.FinanceManagers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FinanceTypes" EntityType="FowlerDORModel.Store.FinanceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FindUnwidDeals" EntityType="FowlerDORModel.Store.FindUnwidDeals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="finmgrfixes" EntityType="FowlerDORModel.Store.finmgrfixes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GradeCredits" EntityType="FowlerDORModel.Store.GradeCredits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Makes" EntityType="FowlerDORModel.Store.Makes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Models" EntityType="FowlerDORModel.Store.Models" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MonthlyHistories" EntityType="FowlerDORModel.Store.MonthlyHistories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mtd_holder" EntityType="FowlerDORModel.Store.mtd_holder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OtherIncomes" EntityType="FowlerDORModel.Store.OtherIncomes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OtherProducts" EntityType="FowlerDORModel.Store.OtherProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="FowlerDORModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleScreenXRefs" EntityType="FowlerDORModel.Store.RoleScreenXRefs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesCategories" EntityType="FowlerDORModel.Store.SalesCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesManagers" EntityType="FowlerDORModel.Store.SalesManagers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesPersons" EntityType="FowlerDORModel.Store.SalesPersons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Screens" EntityType="FowlerDORModel.Store.Screens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Securities" EntityType="FowlerDORModel.Store.Securities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoleXRefs" EntityType="FowlerDORModel.Store.UserRoleXRefs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehicles" EntityType="FowlerDORModel.Store.Vehicles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehicleTypes" EntityType="FowlerDORModel.Store.VehicleTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewBackouts" EntityType="FowlerDORModel.Store.viewBackouts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewBackoutsDetails" EntityType="FowlerDORModel.Store.viewBackoutsDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewCashDealswithFinRes" EntityType="FowlerDORModel.Store.viewCashDealswithFinRes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewDeals" EntityType="FowlerDORModel.Store.viewDeals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewDealswithoutsalesmgrs" EntityType="FowlerDORModel.Store.viewDealswithoutsalesmgrs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewDORProducts" EntityType="FowlerDORModel.Store.viewDORProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewNonCashProdforCashDeals" EntityType="FowlerDORModel.Store.viewNonCashProdforCashDeals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewScreenbytypes" EntityType="FowlerDORModel.Store.viewScreenbytypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewScreenTypeOrders" EntityType="FowlerDORModel.Store.viewScreenTypeOrders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewUnwindDateFixes" EntityType="FowlerDORModel.Store.viewUnwindDateFixes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="viewUserRoles" EntityType="FowlerDORModel.Store.viewUserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VSales_Recap" EntityType="FowlerDORModel.Store.VSales_Recap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Years" EntityType="FowlerDORModel.Store.Years" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="MasterFIs">
+    <Key>
+      <PropertyRef Name="MasterFiId" />
+    </Key>
+    <Property Name="MasterFiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DORid" Type="int" Nullable="false" />
+    <Property Name="Dealerid" Type="int" Nullable="false" />
+    <Property Name="buyerlname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="buyerfname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="cobuyerlname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="cobuyerfname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="vehicle" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="vehicletype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="businesssource" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="otherbusinesssource" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salescategory" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="turnoption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="dealnum" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="stocknum" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="mileage" Type="int" Nullable="false" />
+    <Property Name="salesdate" Type="datetime" Nullable="false" />
+    <Property Name="gross" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="holdback" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="payablegross" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="frontendgross" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="tradestatus" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trademake" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trademodel" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="tradeyear" Type="int" Nullable="true" />
+    <Property Name="trademileage" Type="int" Nullable="true" />
+    <Property Name="tradeintent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="tradetitle" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="tradelien" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="tradeacv" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="tradepayoff" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="salesmanager" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salesperson1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salesperson2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fimanager" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fitype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fipaymentin" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fipaymentout" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fitermin" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fitermout" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ficashdown" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="lienholder" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="delvdate" Type="datetime" Nullable="true" />
+    <Property Name="gap" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="enviro" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="etch" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="dent" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="tirewheel" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="cl" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ah" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="vsc" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="vscoption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TBD" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="Maint" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="finresv" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="frontend" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="backend" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="totalgross" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="creditscore" Type="int" Nullable="true" />
+    <Property Name="datetoacct" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="bookeddate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="unwinddate" Type="datetime" Nullable="true" />
+    <Property Name="datetotag" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="datetobank" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="datepaid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="sectrade" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="amt_fin" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="fintype" Type="int" Nullable="true" />
+    <Property Name="EnteredDt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDt" Type="datetime" Nullable="false" />
+    <Property Name="daysinstock" Type="int" Nullable="true" />
+    <Property Name="makeother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="modelother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1makeother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1modelother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1year" Type="int" Nullable="true" />
+    <Property Name="trade1mileage" Type="int" Nullable="true" />
+    <Property Name="trade1intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1title" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1lien" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade1acv" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="trade1payoff" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="trade1equity" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="trade2status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2makeother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2modelother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2year" Type="int" Nullable="true" />
+    <Property Name="trade2mileage" Type="int" Nullable="true" />
+    <Property Name="trade2intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2title" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2lien" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="trade2acv" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="trade2payoff" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="trade2equity" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="salesperson1per" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salesperson2per" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salesperson3" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="salesperson3per" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="gradecreditid" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BUSINESSSOURCEs">
+    <Key>
+      <PropertyRef Name="BSourceID" />
+      <PropertyRef Name="BusinessSourceID" />
+    </Key>
+    <Property Name="BSourceID" Type="int" Nullable="false" />
+    <Property Name="BusinessSource1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdateUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="true" />
+    <Property Name="BusinessSourceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DealerShips">
+    <Key>
+      <PropertyRef Name="DealerID" />
+      <PropertyRef Name="DealerName" />
+    </Key>
+    <Property Name="DealerID" Type="int" Nullable="false" />
+    <Property Name="DealerName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="DefaultMakes" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="RGBColor" Type="nvarchar" Nullable="true" MaxLength="7" />
+    <Property Name="Color" Type="nvarchar" Nullable="true" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Deals">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="Vehicle" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="VehicleType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeCalc" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FinanceType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FinReserve" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="DealsbyFinMgrs">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="DealsDetails">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="SaleDate" Type="datetime" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="Vehicle" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="VehicleType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeCalc" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FinanceType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PAmount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Recap" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DealStatus">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DOR_import">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="fname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fname2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="VehicleId" Type="int" Nullable="true" />
+    <Property Name="VehicleTypeId" Type="int" Nullable="true" />
+    <Property Name="BSourceId" Type="int" Nullable="true" />
+    <Property Name="BSOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="SaleCategoryId" Type="int" Nullable="true" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="IntentId" Type="int" Nullable="true" />
+    <Property Name="TurnOption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Year" Type="int" Nullable="true" />
+    <Property Name="SaleDate" Type="datetime" Nullable="true" />
+    <Property Name="FEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Holdback" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1" Type="int" Nullable="true" />
+    <Property Name="Trade1Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Year" Type="int" Nullable="true" />
+    <Property Name="Trade1Intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Title" Type="int" Nullable="true" />
+    <Property Name="Trade1POLHolder" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1ACV" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1PayOff" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1Equity" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2" Type="int" Nullable="true" />
+    <Property Name="Trade2Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Year" Type="int" Nullable="true" />
+    <Property Name="Trade2Intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Title" Type="int" Nullable="true" />
+    <Property Name="Trade2POLHolder" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2ACV" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2PayOff" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2Equity" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="SaleManagerId" Type="int" Nullable="true" />
+    <Property Name="SalesPerson1Id" Type="int" Nullable="true" />
+    <Property Name="SalesPerson1Perc" Type="int" Nullable="true" />
+    <Property Name="SalesPerson2Id" Type="int" Nullable="true" />
+    <Property Name="SalesPerson2Perc" Type="int" Nullable="true" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+    <Property Name="PaymentIn" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="PaymentOut" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="TermIn" Type="int" Nullable="true" />
+    <Property Name="TermOut" Type="int" Nullable="true" />
+    <Property Name="CashDown" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="DORLienHolderId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="GradeCreditId" Type="int" Nullable="true" />
+    <Property Name="AcctDate" Type="datetime" Nullable="true" />
+    <Property Name="BookedDate" Type="datetime" Nullable="true" />
+    <Property Name="TagDate" Type="datetime" Nullable="true" />
+    <Property Name="BankDate" Type="datetime" Nullable="true" />
+    <Property Name="PaidDate" Type="datetime" Nullable="true" />
+    <Property Name="FinReserve" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BackoutDate" Type="datetime" Nullable="true" />
+    <Property Name="UnwindDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeCalc" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="SalesPerson3Perc" Type="int" Nullable="true" />
+    <Property Name="SalesPerson3Id" Type="int" Nullable="true" />
+    <Property Name="GradeCredit" Type="int" Nullable="true" />
+    <Property Name="DateToAcct" Type="datetime" Nullable="true" />
+    <Property Name="Mileage" Type="int" Nullable="true" />
+    <Property Name="Trade1Mileage" Type="int" Nullable="true" />
+    <Property Name="Trade2Mileage" Type="int" Nullable="true" />
+    <Property Name="DaysInStock" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DORHistories">
+    <Key>
+      <PropertyRef Name="HistoryDORId" />
+    </Key>
+    <Property Name="HistoryDORId" Type="int" Nullable="false" />
+    <Property Name="DORId" Type="int" Nullable="true" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="fname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fname2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="VehicleId" Type="int" Nullable="true" />
+    <Property Name="VehicleTypeId" Type="int" Nullable="true" />
+    <Property Name="BSourceId" Type="int" Nullable="true" />
+    <Property Name="BSOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="SaleCategoryId" Type="int" Nullable="true" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="IntentId" Type="int" Nullable="true" />
+    <Property Name="TurnOption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Year" Type="int" Nullable="true" />
+    <Property Name="SaleDate" Type="datetime" Nullable="true" />
+    <Property Name="FEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Holdback" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1" Type="int" Nullable="true" />
+    <Property Name="Trade1Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Year" Type="int" Nullable="true" />
+    <Property Name="Trade1Intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1Title" Type="int" Nullable="true" />
+    <Property Name="Trade1POLHolder" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade1ACV" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1PayOff" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade1Equity" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2" Type="int" Nullable="true" />
+    <Property Name="Trade2Make" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2MakeOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2ModelOther" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Year" Type="int" Nullable="true" />
+    <Property Name="Trade2Intent" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2Title" Type="int" Nullable="true" />
+    <Property Name="Trade2POLHolder" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Trade2ACV" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2PayOff" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Trade2Equity" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="SaleManagerId" Type="int" Nullable="true" />
+    <Property Name="SalesPerson1Id" Type="int" Nullable="true" />
+    <Property Name="SalesPerson1Perc" Type="int" Nullable="true" />
+    <Property Name="SalesPerson2Id" Type="int" Nullable="true" />
+    <Property Name="SalesPerson2Perc" Type="int" Nullable="true" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+    <Property Name="PaymentIn" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="PaymentOut" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="TermIn" Type="int" Nullable="true" />
+    <Property Name="TermOut" Type="int" Nullable="true" />
+    <Property Name="CashDown" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="DORLienHolderId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="GradeCreditId" Type="int" Nullable="true" />
+    <Property Name="AcctDate" Type="datetime" Nullable="true" />
+    <Property Name="BookedDate" Type="datetime" Nullable="true" />
+    <Property Name="TagDate" Type="datetime" Nullable="true" />
+    <Property Name="BankDate" Type="datetime" Nullable="true" />
+    <Property Name="PaidDate" Type="datetime" Nullable="true" />
+    <Property Name="FinReserve" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BackoutDate" Type="datetime" Nullable="true" />
+    <Property Name="UnwindDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="MakeCalc" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="SalesPerson3Perc" Type="int" Nullable="true" />
+    <Property Name="SalesPerson3Id" Type="int" Nullable="true" />
+    <Property Name="GradeCredit" Type="int" Nullable="true" />
+    <Property Name="DateToAcct" Type="datetime" Nullable="true" />
+    <Property Name="Mileage" Type="int" Nullable="true" />
+    <Property Name="Trade1Mileage" Type="int" Nullable="true" />
+    <Property Name="Trade2Mileage" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DORLienHolders">
+    <Key>
+      <PropertyRef Name="DORLienHolderId" />
+    </Key>
+    <Property Name="DORLienHolderId" Type="int" Nullable="false" />
+    <Property Name="DORLienHolder1" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Dealer" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DORProducts">
+    <Key>
+      <PropertyRef Name="DORProductId" />
+    </Key>
+    <Property Name="DORProductId" Type="int" Nullable="false" />
+    <Property Name="DORId" Type="int" Nullable="true" />
+    <Property Name="OtherProductId" Type="int" Nullable="true" />
+    <Property Name="PType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PAmount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Recap" Type="int" Nullable="true" />
+    <Property Name="VSCOption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FinanceManagers">
+    <Key>
+      <PropertyRef Name="FMId" />
+    </Key>
+    <Property Name="FMId" Type="int" Nullable="false" />
+    <Property Name="FMName" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="Dealer" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FinanceTypes">
+    <Key>
+      <PropertyRef Name="FinanceTypeId" />
+    </Key>
+    <Property Name="FinanceTypeId" Type="int" Nullable="false" />
+    <Property Name="FinanceType1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FindUnwidDeals">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="UnwindDate" Type="datetime" Nullable="true" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FinReserve" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="TotGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="finmgrfixes">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="GradeCredits">
+    <Key>
+      <PropertyRef Name="GradeId" />
+    </Key>
+    <Property Name="GradeId" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Makes">
+    <Key>
+      <PropertyRef Name="MakeId" />
+    </Key>
+    <Property Name="MakeId" Type="int" Nullable="false" />
+    <Property Name="Dealer" Type="int" Nullable="true" />
+    <Property Name="Make1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Models">
+    <Key>
+      <PropertyRef Name="ModelId" />
+    </Key>
+    <Property Name="ModelId" Type="int" Nullable="false" />
+    <Property Name="MakeId" Type="int" Nullable="true" />
+    <Property Name="Model1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MonthlyHistories">
+    <Key>
+      <PropertyRef Name="MonthlyHistId" />
+    </Key>
+    <Property Name="MonthlyHistId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="HistDate" Type="datetime" Nullable="true" />
+    <Property Name="NewCount" Type="int" Nullable="true" />
+    <Property Name="UsedCount" Type="int" Nullable="true" />
+    <Property Name="TotalCount" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="mtd_holder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="deal_id" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="deal_status" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="deal_delv_date" Type="datetime" Nullable="true" />
+    <Property Name="deal_stck_num" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="deal_mileage" Type="int" Nullable="true" />
+    <Property Name="deal_customer" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="deal_year" Type="int" Nullable="true" />
+    <Property Name="deal_new_used" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="deal_FIMgr" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="deal_sp_1" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="deal_sp_2" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="deal_fin_type" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="deal_trade_year" Type="int" Nullable="true" />
+    <Property Name="deal_trade_model" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="deal_title_status" Type="int" Nullable="true" />
+    <Property Name="deal_trade_value" Type="int" Nullable="true" />
+    <Property Name="deal_dent" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_cl" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_warr" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_gap" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_etch" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_tw" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_enviro" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_fin" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="deal_frnt_end" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="OtherIncomes">
+    <Key>
+      <PropertyRef Name="OtherIncomeId" />
+    </Key>
+    <Property Name="OtherIncomeId" Type="int" Nullable="false" />
+    <Property Name="OtherProductId" Type="int" Nullable="true" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="PType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PAmount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="fname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AdjDate" Type="datetime" Nullable="true" />
+    <Property Name="SaleDate" Type="datetime" Nullable="true" />
+    <Property Name="Reason" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="AddDate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealNum" Type="int" Nullable="true" />
+    <Property Name="VSCOption" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FinanceManagerId" Type="int" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="VehicleTypeId" Type="int" Nullable="true" />
+    <Property Name="OtherType" Type="nvarchar" Nullable="true" MaxLength="5" />
+    <Property Name="VehicleId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="OtherProducts">
+    <Key>
+      <PropertyRef Name="OtherProductId" />
+    </Key>
+    <Property Name="OtherProductId" Type="int" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="POrder" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Comment" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="RoleScreenXRefs">
+    <Key>
+      <PropertyRef Name="RefId" />
+    </Key>
+    <Property Name="RefId" Type="int" Nullable="false" />
+    <Property Name="ScreenId" Type="int" Nullable="true" />
+    <Property Name="RoleId" Type="int" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SalesCategories">
+    <Key>
+      <PropertyRef Name="SalesCategoryId" />
+    </Key>
+    <Property Name="SalesCategoryId" Type="int" Nullable="false" />
+    <Property Name="SalesCategory1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SalesManagers">
+    <Key>
+      <PropertyRef Name="SMId" />
+    </Key>
+    <Property Name="SMId" Type="int" Nullable="false" />
+    <Property Name="SMName" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="Dealer" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SalesPersons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SPtoMasterId" Type="int" Nullable="true" />
+    <Property Name="SPName" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="Dealer" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Screens">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="ScreenName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ScreenType" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="ScreenASP" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ScreenOpt" Type="int" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="ScreenOrder" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Securities">
+    <Key>
+      <PropertyRef Name="SecurityId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="SecurityId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserPass" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerShip" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserRoleXRefs">
+    <Key>
+      <PropertyRef Name="RefId" />
+    </Key>
+    <Property Name="RefId" Type="int" Nullable="false" />
+    <Property Name="SecurityId" Type="int" Nullable="true" />
+    <Property Name="RoleId" Type="int" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+    <Property Name="Vehicle1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VehicleTypes">
+    <Key>
+      <PropertyRef Name="VehicleTypeId" />
+    </Key>
+    <Property Name="VehicleTypeId" Type="int" Nullable="false" />
+    <Property Name="VehicleType1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewBackouts">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="viewBackoutsDetails">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+    <Property Name="UpdDate" Type="datetime" Nullable="true" />
+    <Property Name="BackoutDate" Type="datetime" Nullable="true" />
+    <Property Name="SaleDate" Type="datetime" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="VehicleTypeId" Type="int" Nullable="true" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="viewCashDealswithFinRes">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+    <Property Name="FinReserve" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewDeals">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="VehicleTypeId" Type="int" Nullable="true" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+    <Property Name="VehicleId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="payablegross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="BEGross" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="MakeCalc" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="viewDealswithoutsalesmgrs">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StockNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="SaleManagerId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewDORProducts">
+    <Key>
+      <PropertyRef Name="DORProductId" />
+    </Key>
+    <Property Name="DORProductId" Type="int" Nullable="false" />
+    <Property Name="DORId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewNonCashProdforCashDeals">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="DealNumber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="FinanceTypeId" Type="int" Nullable="true" />
+    <Property Name="Recap" Type="int" Nullable="true" />
+    <Property Name="PAmount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="OtherProductId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewScreenbytypes">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="ScreenName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ScreenType" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="ScreenOrder" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewScreenTypeOrders">
+    <Key>
+      <PropertyRef Name="ScreenId" />
+    </Key>
+    <Property Name="ScreenId" Type="int" Nullable="false" />
+    <Property Name="ScreenName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ScreenType" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="ScreenOrder" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewUnwindDateFixes">
+    <Key>
+      <PropertyRef Name="DORId" />
+    </Key>
+    <Property Name="DealerId" Type="int" Nullable="true" />
+    <Property Name="DORId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="true" />
+    <Property Name="DeliveryDate" Type="datetime" Nullable="true" />
+    <Property Name="UnwindDate" Type="datetime" Nullable="true" />
+    <Property Name="lname1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="BackoutDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="viewUserRoles">
+    <Key>
+      <PropertyRef Name="SecurityId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DealerShip" Type="int" Nullable="true" />
+    <Property Name="RoleId" Type="int" Nullable="true" />
+    <Property Name="SecurityId" Type="int" Nullable="false" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VSales_Recap">
+    <Key>
+      <PropertyRef Name="SalesRecapRecordID" />
+    </Key>
+    <Property Name="SalesRecapRecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dealership" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="dealer_id" Type="int" Nullable="true" />
+    <Property Name="new_cars" Type="int" Nullable="true" />
+    <Property Name="new_trucks" Type="int" Nullable="true" />
+    <Property Name="new_suvs" Type="int" Nullable="true" />
+    <Property Name="used_vehicles" Type="int" Nullable="true" />
+    <Property Name="total_vehicles" Type="int" Nullable="true" />
+    <Property Name="cash" Type="int" Nullable="true" />
+    <Property Name="nc_cash_per" Type="int" Nullable="true" />
+    <Property Name="nt_cash_per" Type="int" Nullable="true" />
+    <Property Name="ns_cash_per" Type="int" Nullable="true" />
+    <Property Name="uv_cash_per" Type="int" Nullable="true" />
+    <Property Name="conv" Type="int" Nullable="true" />
+    <Property Name="nc_conv_per" Type="int" Nullable="true" />
+    <Property Name="nt_conv_per" Type="int" Nullable="true" />
+    <Property Name="ns_conv_per" Type="int" Nullable="true" />
+    <Property Name="uv_conv_per" Type="int" Nullable="true" />
+    <Property Name="rbf" Type="int" Nullable="true" />
+    <Property Name="nc_rbf_per" Type="int" Nullable="true" />
+    <Property Name="nt_rbf_per" Type="int" Nullable="true" />
+    <Property Name="ns_rbf_per" Type="int" Nullable="true" />
+    <Property Name="uv_rbf_per" Type="int" Nullable="true" />
+    <Property Name="osf" Type="int" Nullable="true" />
+    <Property Name="nc_osf_per" Type="int" Nullable="true" />
+    <Property Name="nt_osf_per" Type="int" Nullable="true" />
+    <Property Name="ns_osf_per" Type="int" Nullable="true" />
+    <Property Name="uv_osf_per" Type="int" Nullable="true" />
+    <Property Name="ave_nc_front" Type="int" Nullable="true" />
+    <Property Name="ave_nt_front" Type="int" Nullable="true" />
+    <Property Name="ave_ns_front" Type="int" Nullable="true" />
+    <Property Name="ave_nv_front" Type="int" Nullable="true" />
+    <Property Name="ave_uv_front" Type="int" Nullable="true" />
+    <Property Name="ave_nc_back" Type="int" Nullable="true" />
+    <Property Name="ave_nt_back" Type="int" Nullable="true" />
+    <Property Name="ave_ns_back" Type="int" Nullable="true" />
+    <Property Name="ave_nv_back" Type="int" Nullable="true" />
+    <Property Name="ave_uv_back" Type="int" Nullable="true" />
+    <Property Name="tot_income" Type="int" Nullable="true" />
+    <Property Name="avg_front" Type="int" Nullable="true" />
+    <Property Name="avg_fi_gross" Type="int" Nullable="true" />
+    <Property Name="avg_f_b" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Years">
+    <Key>
+      <PropertyRef Name="YearId" />
+    </Key>
+    <Property Name="YearId" Type="int" Nullable="false" />
+    <Property Name="Year1" Type="int" Nullable="true" />
+    <Property Name="DisableDate" Type="datetime" Nullable="true" />
+    <Property Name="AddUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UpdUser" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" Nullable="true" />
+  </EntityType>
+</Schema>

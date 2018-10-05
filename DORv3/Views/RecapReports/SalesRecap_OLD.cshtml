@@ -1,0 +1,391 @@
+﻿@model DORv3.Models.ViewModels.SalesRecapViewModel
+
+@{
+    ViewBag.Title = "SalesRecap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SalesRecap</h2>
+Report Range: @Html.EditorFor(m => Model.StartDate)  to  @Html.EditorFor(m => Model.EndDate)  &nbsp;&nbsp; <input type="button" id="btnNewSearch" value="New Search" />
+<div>
+    <h4>SalesRecapViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <table>
+            @{var col = Model.SalesRecapObjects.FirstOrDefault();}
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.dealership)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.dealership)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.new_cars)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.new_cars)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.new_trucks)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.new_trucks)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.new_suvs)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.new_suvs)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.used_vehicles)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.used_vehicles)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.total_vehicles)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.total_vehicles)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.cash)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.cash)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nc_cash_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nc_cash_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nt_cash_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nt_cash_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ns_cash_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ns_cash_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.uv_cash_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.uv_cash_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.conv)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.conv)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nc_conv_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nc_conv_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nt_conv_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nt_conv_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ns_conv_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ns_conv_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.uv_conv_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.uv_conv_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.rbf)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.rbf)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nc_rbf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nc_rbf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nt_rbf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nt_rbf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ns_rbf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ns_rbf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.uv_rbf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.uv_rbf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.osf)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.osf)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nc_osf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nc_osf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.nt_osf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.nt_osf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ns_osf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ns_osf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.uv_osf_per)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.uv_osf_per)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nc_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nc_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nt_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nt_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_ns_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_ns_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nv_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nv_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_uv_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_uv_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nc_back)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nc_back)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nt_back)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nt_back)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_ns_back)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_ns_back)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_nv_back)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_nv_back)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.ave_uv_back)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.ave_uv_back)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.tot_income)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.tot_income)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.avg_front)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.avg_front)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.avg_fi_gross)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.avg_fi_gross)</td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => col.avg_f_b)
+                </td>
+                @foreach (var obj in Model.SalesRecapObjects)
+                {
+                    <td>@Html.DisplayFor(m => obj.avg_f_b)</td>
+                }
+            </tr>
+        </table>
+    </dl>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnNewSearch").click(function(){
+            $.post("@Url.Action("NewSearch")", { action: "SalesRecap", sDate: $("#StartDate").val(), eDate: $("#EndDate").val() }, function (result) {
+                window.location.href = result.Url
+            });
+        })
+    });
+</script>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

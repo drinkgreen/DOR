@@ -1,0 +1,194 @@
+﻿@model DORv3.Models.ViewModels.SalesboardViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<h2>Salesboard</h2>
+@*<dl class="dl-horizontal">
+    @{
+        var grid = new WebGrid(Model.salesboardRecords,
+                              canSort: false,
+                              canPage: false
+                              );
+    }
+    @grid.GetHtml(displayHeader: false)
+
+</dl>*@
+Report Date: @Html.EditorFor(m => Model.ReportDate)  <br />
+# of Selling Days: @Model.TotalSellDays<br />
+# of Selling Days Current:  @Model.SellDaysCurrent<br />
+# of Selling Days Remaining: @Model.SellDaysRemaining<br />
+<style>
+    .salesb td {
+        border: 1px solid gray;
+    }
+
+    .Sunday_True {
+        background-color: #8EADDC;
+    }
+
+    .Sunday_True span {
+        font-weight: bold;
+    }
+
+    a { color: black}
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ReportDate").change(function(){
+            $.post("@Url.Action("NewSearch")", { sbDate: $("#ReportDate").val() }, function (result) {
+                window.location.href = result.Url
+            });
+        })
+    });
+</script>
+<div>
+    <hr />
+        <table id="salesb" class="salesb" width="100%">
+            <tr>
+                <td>Day of the Week</td>
+                @foreach (var col in Model.DaysOfWeekHeader)
+                {
+                    if (col.ToString() == "Su")
+                    {
+                        <td style="background-color: #8EADDC">
+                            <span style="font-weight: bold">@col.ToString()</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @col.ToString()
+                        </td>
+                    }
+
+                }
+                <td colspan="4"> </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                @foreach (var day in Model.SalesboardReportObjects.First().DaysOfWeek)
+                {
+                    @*<td class="isSunday" isSunday="@day.IsSunday">
+                        <span style="font-weight: bold">@Html.DisplayFor(m => day.DateOfSale.Day)</span>
+                    </td>*@
+                    if (day.IsSunday)
+                    {
+                            <td style="background-color: #8EADDC">
+                                <span style="font-weight: bold">@Html.DisplayFor(m => day.DateOfSale.Day)</span>
+                            </td>
+                    }
+                    else
+                    {
+                            <td>
+                                @Html.DisplayFor(m => day.DateOfSale.Day)
+                            </td>
+                    }
+                }
+                <td style="background-color: #0047ab; color: white;">ACTUAL</td>
+                <td style="background-color: #0047ab; color: white;">MID</td>
+                <td style="background-color: #0047ab; color: white;">@DateTime.Now.AddYears(-1).Year</td>
+                @*<td>@Model.SalesboardReportObjects.First().DaysOfWeek.First().DateOfSale.Year</td>*@
+                <td style="background-color: #0047ab; color: white;">TRAVEL</td>
+            </tr>
+            <tr style="border-bottom: 2px solid #0047ab;">
+                <td># Selling Days</td>
+                @foreach (var day in Model.SalesboardReportObjects.First().DaysOfWeek)
+                {
+                    if (day.IsSunday)
+                    {
+                        <td style="background-color: #8EADDC">
+                            <span style="font-weight: bold">@Html.DisplayFor(m => day.WeekNumber)</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.DisplayFor(m => day.SellingDay)
+                        </td>
+                    }
+                }
+                <td style="background-color: #0047ab; color: white;">SALES</td>
+                <td style="background-color: #0047ab; color: white;">TRAVEL</td>
+                <td style="background-color: #0047ab; color: white;">@Model.SalesboardReportObjects.First().DaysOfWeek.First().DateOfSale.ToString("MMM")</td>
+                <td style="background-color: #0047ab; color: white;">DIFF</td>
+            </tr>
+            
+            @*Main Salesboard records*@
+            @{
+                foreach (var obj in Model.SalesboardReportObjects)
+                {
+                    <tr><td colspan="50" style="border: 0px">&nbsp;</td></tr>
+                    <tr>
+                        <td colspan="50" style="font-weight: bold; color:white; background-color: @obj.Dealership.RGBColor">
+                            @Html.DisplayFor(m => obj.Dealership.DealerName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => obj.DaysOfWeek.First().NewSalesCount)
+                        </td>
+                        @foreach (var ns in obj.DaysOfWeek)
+                        {
+                            <td class="Sunday_@ns.IsSunday.ToString()">
+                                <span>
+                                    @Html.ActionLink(ns.NewSalesCount.ToString(), "GoToMTD", new { dateOfSale = ns.DateOfSale, dealerID = obj.Dealership.DealerID, vehicleType = 1 })
+                                </span>
+                            </td>
+                        }
+                        <td>@obj.ActualNewSalesCount</td>
+                        <td>@obj.NewTravel</td>
+                        <td>@obj.PrevNewTravel</td>
+                        <td>@obj.NewTravelDiff</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => obj.DaysOfWeek.First().UsedSalesCount)
+                        </td>
+                        @foreach (var us in obj.DaysOfWeek)
+                        {
+                            <td class="Sunday_@us.IsSunday.ToString()">
+                                <span>
+                                    @Html.ActionLink(us.UsedSalesCount.ToString(), "GoToMTD", new { dateOfSale = us.DateOfSale, dealerID = obj.Dealership.DealerID, vehicleType = 2 })
+                                </span>
+                            </td>
+                        }
+                        <td>@obj.ActualUsedSalesCount</td>
+                        <td>@obj.UsedTravel</td>
+                        <td>@obj.PrevOldTravel</td>
+                        <td>@obj.UsedTravelDiff</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => obj.DaysOfWeek.First().TotalSalesCount)
+                        </td>
+                        @foreach (var tot in obj.DaysOfWeek)
+                        {
+                            <td class="Sunday_@tot.IsSunday.ToString()">
+                                <span>
+                                    @Html.ActionLink(tot.TotalSalesCount.ToString(), "GoToMTD", new { dateOfSale = tot.DateOfSale, dealerID = obj.Dealership.DealerID, vehicleType = 0 })
+                                </span>
+                            </td>
+                        }
+                        <td>@obj.ActualTotalSalesCount</td>
+                        <td>@obj.TotalTravel</td>
+                        <td>@obj.TotalPrevTravel</td>
+                        <td>@obj.TotalTravelDiff</td>
+                    </tr>
+                    <tr style="border-bottom: 3px solid @obj.Dealership.RGBColor ;">
+                        <td colspan="50" style="font-style: italic">
+                            <span>AVG Daily: @obj.AverageDailySales</span>
+                            <span>Backout New: @obj.NewBackoutCount</span>
+                            <span>Backout Used: @obj.UsedBackoutCount</span>
+                            <span>Unwind: @obj.UnwindCount</span>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+</div>

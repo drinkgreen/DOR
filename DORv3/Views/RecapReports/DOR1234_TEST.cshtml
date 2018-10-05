@@ -1,0 +1,25 @@
+﻿@model DORv3.Models.ViewModels.DOR1234RecapViewModel
+
+@{
+    ViewBag.Title = "TEST TEST TEST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DOR1234Recap</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @{
+            var grid = new WebGrid(Model.RecapRecords,
+                                  canSort: false,
+                                  canPage: false
+                                  );
+        }
+        @grid.GetHtml()
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

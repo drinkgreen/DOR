@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FowlerDORModelStoreContainer" CdmEntityContainer="FowlerDOR">
+    <EntitySetMapping Name="MasterFIs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.MasterFI)">
+        <MappingFragment StoreEntitySet="MasterFIs">
+          <ScalarProperty Name="MasterFiId" ColumnName="MasterFiId" />
+          <ScalarProperty Name="DORid" ColumnName="DORid" />
+          <ScalarProperty Name="Dealerid" ColumnName="Dealerid" />
+          <ScalarProperty Name="buyerlname" ColumnName="buyerlname" />
+          <ScalarProperty Name="buyerfname" ColumnName="buyerfname" />
+          <ScalarProperty Name="cobuyerlname" ColumnName="cobuyerlname" />
+          <ScalarProperty Name="cobuyerfname" ColumnName="cobuyerfname" />
+          <ScalarProperty Name="vehicle" ColumnName="vehicle" />
+          <ScalarProperty Name="vehicletype" ColumnName="vehicletype" />
+          <ScalarProperty Name="businesssource" ColumnName="businesssource" />
+          <ScalarProperty Name="otherbusinesssource" ColumnName="otherbusinesssource" />
+          <ScalarProperty Name="salescategory" ColumnName="salescategory" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="intent" ColumnName="intent" />
+          <ScalarProperty Name="turnoption" ColumnName="turnoption" />
+          <ScalarProperty Name="dealnum" ColumnName="dealnum" />
+          <ScalarProperty Name="stocknum" ColumnName="stocknum" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="salesdate" ColumnName="salesdate" />
+          <ScalarProperty Name="gross" ColumnName="gross" />
+          <ScalarProperty Name="holdback" ColumnName="holdback" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="frontendgross" ColumnName="frontendgross" />
+          <ScalarProperty Name="tradestatus" ColumnName="tradestatus" />
+          <ScalarProperty Name="trademake" ColumnName="trademake" />
+          <ScalarProperty Name="trademodel" ColumnName="trademodel" />
+          <ScalarProperty Name="tradeyear" ColumnName="tradeyear" />
+          <ScalarProperty Name="trademileage" ColumnName="trademileage" />
+          <ScalarProperty Name="tradeintent" ColumnName="tradeintent" />
+          <ScalarProperty Name="tradetitle" ColumnName="tradetitle" />
+          <ScalarProperty Name="tradelien" ColumnName="tradelien" />
+          <ScalarProperty Name="tradeacv" ColumnName="tradeacv" />
+          <ScalarProperty Name="tradepayoff" ColumnName="tradepayoff" />
+          <ScalarProperty Name="salesmanager" ColumnName="salesmanager" />
+          <ScalarProperty Name="salesperson1" ColumnName="salesperson1" />
+          <ScalarProperty Name="salesperson2" ColumnName="salesperson2" />
+          <ScalarProperty Name="fimanager" ColumnName="fimanager" />
+          <ScalarProperty Name="fitype" ColumnName="fitype" />
+          <ScalarProperty Name="fipaymentin" ColumnName="fipaymentin" />
+          <ScalarProperty Name="fipaymentout" ColumnName="fipaymentout" />
+          <ScalarProperty Name="fitermin" ColumnName="fitermin" />
+          <ScalarProperty Name="fitermout" ColumnName="fitermout" />
+          <ScalarProperty Name="ficashdown" ColumnName="ficashdown" />
+          <ScalarProperty Name="lienholder" ColumnName="lienholder" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="delvdate" ColumnName="delvdate" />
+          <ScalarProperty Name="gap" ColumnName="gap" />
+          <ScalarProperty Name="enviro" ColumnName="enviro" />
+          <ScalarProperty Name="etch" ColumnName="etch" />
+          <ScalarProperty Name="dent" ColumnName="dent" />
+          <ScalarProperty Name="tirewheel" ColumnName="tirewheel" />
+          <ScalarProperty Name="cl" ColumnName="cl" />
+          <ScalarProperty Name="ah" ColumnName="ah" />
+          <ScalarProperty Name="vsc" ColumnName="vsc" />
+          <ScalarProperty Name="vscoption" ColumnName="vscoption" />
+          <ScalarProperty Name="TBD" ColumnName="TBD" />
+          <ScalarProperty Name="Maint" ColumnName="Maint" />
+          <ScalarProperty Name="finresv" ColumnName="finresv" />
+          <ScalarProperty Name="frontend" ColumnName="frontend" />
+          <ScalarProperty Name="backend" ColumnName="backend" />
+          <ScalarProperty Name="totalgross" ColumnName="totalgross" />
+          <ScalarProperty Name="creditscore" ColumnName="creditscore" />
+          <ScalarProperty Name="datetoacct" ColumnName="datetoacct" />
+          <ScalarProperty Name="bookeddate" ColumnName="bookeddate" />
+          <ScalarProperty Name="unwinddate" ColumnName="unwinddate" />
+          <ScalarProperty Name="datetotag" ColumnName="datetotag" />
+          <ScalarProperty Name="datetobank" ColumnName="datetobank" />
+          <ScalarProperty Name="datepaid" ColumnName="datepaid" />
+          <ScalarProperty Name="sectrade" ColumnName="sectrade" />
+          <ScalarProperty Name="amt_fin" ColumnName="amt_fin" />
+          <ScalarProperty Name="fintype" ColumnName="fintype" />
+          <ScalarProperty Name="EnteredDt" ColumnName="EnteredDt" />
+          <ScalarProperty Name="UpdatedDt" ColumnName="UpdatedDt" />
+          <ScalarProperty Name="daysinstock" ColumnName="daysinstock" />
+          <ScalarProperty Name="makeother" ColumnName="makeother" />
+          <ScalarProperty Name="modelother" ColumnName="modelother" />
+          <ScalarProperty Name="trade1status" ColumnName="trade1status" />
+          <ScalarProperty Name="trade1make" ColumnName="trade1make" />
+          <ScalarProperty Name="trade1model" ColumnName="trade1model" />
+          <ScalarProperty Name="trade1makeother" ColumnName="trade1makeother" />
+          <ScalarProperty Name="trade1modelother" ColumnName="trade1modelother" />
+          <ScalarProperty Name="trade1year" ColumnName="trade1year" />
+          <ScalarProperty Name="trade1mileage" ColumnName="trade1mileage" />
+          <ScalarProperty Name="trade1intent" ColumnName="trade1intent" />
+          <ScalarProperty Name="trade1title" ColumnName="trade1title" />
+          <ScalarProperty Name="trade1lien" ColumnName="trade1lien" />
+          <ScalarProperty Name="trade1acv" ColumnName="trade1acv" />
+          <ScalarProperty Name="trade1payoff" ColumnName="trade1payoff" />
+          <ScalarProperty Name="trade1equity" ColumnName="trade1equity" />
+          <ScalarProperty Name="trade2status" ColumnName="trade2status" />
+          <ScalarProperty Name="trade2make" ColumnName="trade2make" />
+          <ScalarProperty Name="trade2model" ColumnName="trade2model" />
+          <ScalarProperty Name="trade2makeother" ColumnName="trade2makeother" />
+          <ScalarProperty Name="trade2modelother" ColumnName="trade2modelother" />
+          <ScalarProperty Name="trade2year" ColumnName="trade2year" />
+          <ScalarProperty Name="trade2mileage" ColumnName="trade2mileage" />
+          <ScalarProperty Name="trade2intent" ColumnName="trade2intent" />
+          <ScalarProperty Name="trade2title" ColumnName="trade2title" />
+          <ScalarProperty Name="trade2lien" ColumnName="trade2lien" />
+          <ScalarProperty Name="trade2acv" ColumnName="trade2acv" />
+          <ScalarProperty Name="trade2payoff" ColumnName="trade2payoff" />
+          <ScalarProperty Name="trade2equity" ColumnName="trade2equity" />
+          <ScalarProperty Name="salesperson1per" ColumnName="salesperson1per" />
+          <ScalarProperty Name="salesperson2per" ColumnName="salesperson2per" />
+          <ScalarProperty Name="salesperson3" ColumnName="salesperson3" />
+          <ScalarProperty Name="salesperson3per" ColumnName="salesperson3per" />
+          <ScalarProperty Name="gradecreditid" ColumnName="gradecreditid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUSINESSSOURCEs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.BUSINESSSOURCE)">
+        <MappingFragment StoreEntitySet="BUSINESSSOURCEs">
+          <ScalarProperty Name="BSourceID" ColumnName="BSourceID" />
+          <ScalarProperty Name="BusinessSourceID" ColumnName="BusinessSourceID" />
+          <ScalarProperty Name="BusinessSource1" ColumnName="BusinessSource1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealerShips">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DealerShip)">
+        <MappingFragment StoreEntitySet="DealerShips">
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="DefaultMakes" ColumnName="DefaultMakes" />
+          <ScalarProperty Name="RGBColor" ColumnName="RGBColor" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deals">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Deal)">
+        <MappingFragment StoreEntitySet="Deals">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="MakeCalc" ColumnName="MakeCalc" />
+          <ScalarProperty Name="FinanceType" ColumnName="FinanceType" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="FinReserve" ColumnName="FinReserve" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealsbyFinMgrs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DealsbyFinMgr)">
+        <MappingFragment StoreEntitySet="DealsbyFinMgrs">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealsDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DealsDetail)">
+        <MappingFragment StoreEntitySet="DealsDetails">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="MakeCalc" ColumnName="MakeCalc" />
+          <ScalarProperty Name="FinanceType" ColumnName="FinanceType" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="Recap" ColumnName="Recap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealStatus">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DealStatu)">
+        <MappingFragment StoreEntitySet="DealStatus">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOR_import">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DOR_import)">
+        <MappingFragment StoreEntitySet="DOR_import">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="fname1" ColumnName="fname1" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="fname2" ColumnName="fname2" />
+          <ScalarProperty Name="lname2" ColumnName="lname2" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="BSourceId" ColumnName="BSourceId" />
+          <ScalarProperty Name="BSOther" ColumnName="BSOther" />
+          <ScalarProperty Name="SaleCategoryId" ColumnName="SaleCategoryId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="IntentId" ColumnName="IntentId" />
+          <ScalarProperty Name="TurnOption" ColumnName="TurnOption" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="MakeOther" ColumnName="MakeOther" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ModelOther" ColumnName="ModelOther" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="FEGross" ColumnName="FEGross" />
+          <ScalarProperty Name="Holdback" ColumnName="Holdback" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="Trade1" ColumnName="Trade1" />
+          <ScalarProperty Name="Trade1Make" ColumnName="Trade1Make" />
+          <ScalarProperty Name="Trade1MakeOther" ColumnName="Trade1MakeOther" />
+          <ScalarProperty Name="Trade1Model" ColumnName="Trade1Model" />
+          <ScalarProperty Name="Trade1ModelOther" ColumnName="Trade1ModelOther" />
+          <ScalarProperty Name="Trade1Year" ColumnName="Trade1Year" />
+          <ScalarProperty Name="Trade1Intent" ColumnName="Trade1Intent" />
+          <ScalarProperty Name="Trade1Title" ColumnName="Trade1Title" />
+          <ScalarProperty Name="Trade1POLHolder" ColumnName="Trade1POLHolder" />
+          <ScalarProperty Name="Trade1ACV" ColumnName="Trade1ACV" />
+          <ScalarProperty Name="Trade1PayOff" ColumnName="Trade1PayOff" />
+          <ScalarProperty Name="Trade1Equity" ColumnName="Trade1Equity" />
+          <ScalarProperty Name="Trade2" ColumnName="Trade2" />
+          <ScalarProperty Name="Trade2Make" ColumnName="Trade2Make" />
+          <ScalarProperty Name="Trade2MakeOther" ColumnName="Trade2MakeOther" />
+          <ScalarProperty Name="Trade2Model" ColumnName="Trade2Model" />
+          <ScalarProperty Name="Trade2ModelOther" ColumnName="Trade2ModelOther" />
+          <ScalarProperty Name="Trade2Year" ColumnName="Trade2Year" />
+          <ScalarProperty Name="Trade2Intent" ColumnName="Trade2Intent" />
+          <ScalarProperty Name="Trade2Title" ColumnName="Trade2Title" />
+          <ScalarProperty Name="Trade2POLHolder" ColumnName="Trade2POLHolder" />
+          <ScalarProperty Name="Trade2ACV" ColumnName="Trade2ACV" />
+          <ScalarProperty Name="Trade2PayOff" ColumnName="Trade2PayOff" />
+          <ScalarProperty Name="Trade2Equity" ColumnName="Trade2Equity" />
+          <ScalarProperty Name="SaleManagerId" ColumnName="SaleManagerId" />
+          <ScalarProperty Name="SalesPerson1Id" ColumnName="SalesPerson1Id" />
+          <ScalarProperty Name="SalesPerson1Perc" ColumnName="SalesPerson1Perc" />
+          <ScalarProperty Name="SalesPerson2Id" ColumnName="SalesPerson2Id" />
+          <ScalarProperty Name="SalesPerson2Perc" ColumnName="SalesPerson2Perc" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="PaymentIn" ColumnName="PaymentIn" />
+          <ScalarProperty Name="PaymentOut" ColumnName="PaymentOut" />
+          <ScalarProperty Name="TermIn" ColumnName="TermIn" />
+          <ScalarProperty Name="TermOut" ColumnName="TermOut" />
+          <ScalarProperty Name="CashDown" ColumnName="CashDown" />
+          <ScalarProperty Name="DORLienHolderId" ColumnName="DORLienHolderId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="GradeCreditId" ColumnName="GradeCreditId" />
+          <ScalarProperty Name="AcctDate" ColumnName="AcctDate" />
+          <ScalarProperty Name="BookedDate" ColumnName="BookedDate" />
+          <ScalarProperty Name="TagDate" ColumnName="TagDate" />
+          <ScalarProperty Name="BankDate" ColumnName="BankDate" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="FinReserve" ColumnName="FinReserve" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+          <ScalarProperty Name="TotGross" ColumnName="TotGross" />
+          <ScalarProperty Name="BackoutDate" ColumnName="BackoutDate" />
+          <ScalarProperty Name="UnwindDate" ColumnName="UnwindDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="MakeCalc" ColumnName="MakeCalc" />
+          <ScalarProperty Name="SalesPerson3Perc" ColumnName="SalesPerson3Perc" />
+          <ScalarProperty Name="SalesPerson3Id" ColumnName="SalesPerson3Id" />
+          <ScalarProperty Name="GradeCredit" ColumnName="GradeCredit" />
+          <ScalarProperty Name="DateToAcct" ColumnName="DateToAcct" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="Trade1Mileage" ColumnName="Trade1Mileage" />
+          <ScalarProperty Name="Trade2Mileage" ColumnName="Trade2Mileage" />
+          <ScalarProperty Name="DaysInStock" ColumnName="DaysInStock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DORHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DORHistory)">
+        <MappingFragment StoreEntitySet="DORHistories">
+          <ScalarProperty Name="HistoryDORId" ColumnName="HistoryDORId" />
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="fname1" ColumnName="fname1" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="fname2" ColumnName="fname2" />
+          <ScalarProperty Name="lname2" ColumnName="lname2" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="BSourceId" ColumnName="BSourceId" />
+          <ScalarProperty Name="BSOther" ColumnName="BSOther" />
+          <ScalarProperty Name="SaleCategoryId" ColumnName="SaleCategoryId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="IntentId" ColumnName="IntentId" />
+          <ScalarProperty Name="TurnOption" ColumnName="TurnOption" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="MakeOther" ColumnName="MakeOther" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ModelOther" ColumnName="ModelOther" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="FEGross" ColumnName="FEGross" />
+          <ScalarProperty Name="Holdback" ColumnName="Holdback" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="Trade1" ColumnName="Trade1" />
+          <ScalarProperty Name="Trade1Make" ColumnName="Trade1Make" />
+          <ScalarProperty Name="Trade1MakeOther" ColumnName="Trade1MakeOther" />
+          <ScalarProperty Name="Trade1Model" ColumnName="Trade1Model" />
+          <ScalarProperty Name="Trade1ModelOther" ColumnName="Trade1ModelOther" />
+          <ScalarProperty Name="Trade1Year" ColumnName="Trade1Year" />
+          <ScalarProperty Name="Trade1Intent" ColumnName="Trade1Intent" />
+          <ScalarProperty Name="Trade1Title" ColumnName="Trade1Title" />
+          <ScalarProperty Name="Trade1POLHolder" ColumnName="Trade1POLHolder" />
+          <ScalarProperty Name="Trade1ACV" ColumnName="Trade1ACV" />
+          <ScalarProperty Name="Trade1PayOff" ColumnName="Trade1PayOff" />
+          <ScalarProperty Name="Trade1Equity" ColumnName="Trade1Equity" />
+          <ScalarProperty Name="Trade2" ColumnName="Trade2" />
+          <ScalarProperty Name="Trade2Make" ColumnName="Trade2Make" />
+          <ScalarProperty Name="Trade2MakeOther" ColumnName="Trade2MakeOther" />
+          <ScalarProperty Name="Trade2Model" ColumnName="Trade2Model" />
+          <ScalarProperty Name="Trade2ModelOther" ColumnName="Trade2ModelOther" />
+          <ScalarProperty Name="Trade2Year" ColumnName="Trade2Year" />
+          <ScalarProperty Name="Trade2Intent" ColumnName="Trade2Intent" />
+          <ScalarProperty Name="Trade2Title" ColumnName="Trade2Title" />
+          <ScalarProperty Name="Trade2POLHolder" ColumnName="Trade2POLHolder" />
+          <ScalarProperty Name="Trade2ACV" ColumnName="Trade2ACV" />
+          <ScalarProperty Name="Trade2PayOff" ColumnName="Trade2PayOff" />
+          <ScalarProperty Name="Trade2Equity" ColumnName="Trade2Equity" />
+          <ScalarProperty Name="SaleManagerId" ColumnName="SaleManagerId" />
+          <ScalarProperty Name="SalesPerson1Id" ColumnName="SalesPerson1Id" />
+          <ScalarProperty Name="SalesPerson1Perc" ColumnName="SalesPerson1Perc" />
+          <ScalarProperty Name="SalesPerson2Id" ColumnName="SalesPerson2Id" />
+          <ScalarProperty Name="SalesPerson2Perc" ColumnName="SalesPerson2Perc" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="PaymentIn" ColumnName="PaymentIn" />
+          <ScalarProperty Name="PaymentOut" ColumnName="PaymentOut" />
+          <ScalarProperty Name="TermIn" ColumnName="TermIn" />
+          <ScalarProperty Name="TermOut" ColumnName="TermOut" />
+          <ScalarProperty Name="CashDown" ColumnName="CashDown" />
+          <ScalarProperty Name="DORLienHolderId" ColumnName="DORLienHolderId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="GradeCreditId" ColumnName="GradeCreditId" />
+          <ScalarProperty Name="AcctDate" ColumnName="AcctDate" />
+          <ScalarProperty Name="BookedDate" ColumnName="BookedDate" />
+          <ScalarProperty Name="TagDate" ColumnName="TagDate" />
+          <ScalarProperty Name="BankDate" ColumnName="BankDate" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="FinReserve" ColumnName="FinReserve" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+          <ScalarProperty Name="TotGross" ColumnName="TotGross" />
+          <ScalarProperty Name="BackoutDate" ColumnName="BackoutDate" />
+          <ScalarProperty Name="UnwindDate" ColumnName="UnwindDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="MakeCalc" ColumnName="MakeCalc" />
+          <ScalarProperty Name="SalesPerson3Perc" ColumnName="SalesPerson3Perc" />
+          <ScalarProperty Name="SalesPerson3Id" ColumnName="SalesPerson3Id" />
+          <ScalarProperty Name="GradeCredit" ColumnName="GradeCredit" />
+          <ScalarProperty Name="DateToAcct" ColumnName="DateToAcct" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="Trade1Mileage" ColumnName="Trade1Mileage" />
+          <ScalarProperty Name="Trade2Mileage" ColumnName="Trade2Mileage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DORLienHolders">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DORLienHolder)">
+        <MappingFragment StoreEntitySet="DORLienHolders">
+          <ScalarProperty Name="DORLienHolderId" ColumnName="DORLienHolderId" />
+          <ScalarProperty Name="DORLienHolder1" ColumnName="DORLienHolder1" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DORProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.DORProduct)">
+        <MappingFragment StoreEntitySet="DORProducts">
+          <ScalarProperty Name="DORProductId" ColumnName="DORProductId" />
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="OtherProductId" ColumnName="OtherProductId" />
+          <ScalarProperty Name="PType" ColumnName="PType" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="Recap" ColumnName="Recap" />
+          <ScalarProperty Name="VSCOption" ColumnName="VSCOption" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceManagers">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.FinanceManager)">
+        <MappingFragment StoreEntitySet="FinanceManagers">
+          <ScalarProperty Name="FMId" ColumnName="FMId" />
+          <ScalarProperty Name="FMName" ColumnName="FMName" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.FinanceType)">
+        <MappingFragment StoreEntitySet="FinanceTypes">
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="FinanceType1" ColumnName="FinanceType1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FindUnwidDeals">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.FindUnwidDeal)">
+        <MappingFragment StoreEntitySet="FindUnwidDeals">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="UnwindDate" ColumnName="UnwindDate" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="FinReserve" ColumnName="FinReserve" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+          <ScalarProperty Name="TotGross" ColumnName="TotGross" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="finmgrfixes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.finmgrfix)">
+        <MappingFragment StoreEntitySet="finmgrfixes">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GradeCredits">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.GradeCredit)">
+        <MappingFragment StoreEntitySet="GradeCredits">
+          <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Make)">
+        <MappingFragment StoreEntitySet="Makes">
+          <ScalarProperty Name="MakeId" ColumnName="MakeId" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+          <ScalarProperty Name="Make1" ColumnName="Make1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Models">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Model)">
+        <MappingFragment StoreEntitySet="Models">
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="MakeId" ColumnName="MakeId" />
+          <ScalarProperty Name="Model1" ColumnName="Model1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonthlyHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.MonthlyHistory)">
+        <MappingFragment StoreEntitySet="MonthlyHistories">
+          <ScalarProperty Name="MonthlyHistId" ColumnName="MonthlyHistId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="HistDate" ColumnName="HistDate" />
+          <ScalarProperty Name="NewCount" ColumnName="NewCount" />
+          <ScalarProperty Name="UsedCount" ColumnName="UsedCount" />
+          <ScalarProperty Name="TotalCount" ColumnName="TotalCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mtd_holder">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.mtd_holder)">
+        <MappingFragment StoreEntitySet="mtd_holder">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="deal_id" ColumnName="deal_id" />
+          <ScalarProperty Name="deal_status" ColumnName="deal_status" />
+          <ScalarProperty Name="deal_delv_date" ColumnName="deal_delv_date" />
+          <ScalarProperty Name="deal_stck_num" ColumnName="deal_stck_num" />
+          <ScalarProperty Name="deal_mileage" ColumnName="deal_mileage" />
+          <ScalarProperty Name="deal_customer" ColumnName="deal_customer" />
+          <ScalarProperty Name="deal_year" ColumnName="deal_year" />
+          <ScalarProperty Name="deal_new_used" ColumnName="deal_new_used" />
+          <ScalarProperty Name="deal_FIMgr" ColumnName="deal_FIMgr" />
+          <ScalarProperty Name="deal_sp_1" ColumnName="deal_sp_1" />
+          <ScalarProperty Name="deal_sp_2" ColumnName="deal_sp_2" />
+          <ScalarProperty Name="deal_fin_type" ColumnName="deal_fin_type" />
+          <ScalarProperty Name="deal_trade_year" ColumnName="deal_trade_year" />
+          <ScalarProperty Name="deal_trade_model" ColumnName="deal_trade_model" />
+          <ScalarProperty Name="deal_title_status" ColumnName="deal_title_status" />
+          <ScalarProperty Name="deal_trade_value" ColumnName="deal_trade_value" />
+          <ScalarProperty Name="deal_dent" ColumnName="deal_dent" />
+          <ScalarProperty Name="deal_cl" ColumnName="deal_cl" />
+          <ScalarProperty Name="deal_warr" ColumnName="deal_warr" />
+          <ScalarProperty Name="deal_gap" ColumnName="deal_gap" />
+          <ScalarProperty Name="deal_etch" ColumnName="deal_etch" />
+          <ScalarProperty Name="deal_tw" ColumnName="deal_tw" />
+          <ScalarProperty Name="deal_enviro" ColumnName="deal_enviro" />
+          <ScalarProperty Name="deal_fin" ColumnName="deal_fin" />
+          <ScalarProperty Name="deal_frnt_end" ColumnName="deal_frnt_end" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherIncomes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.OtherIncome)">
+        <MappingFragment StoreEntitySet="OtherIncomes">
+          <ScalarProperty Name="OtherIncomeId" ColumnName="OtherIncomeId" />
+          <ScalarProperty Name="OtherProductId" ColumnName="OtherProductId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="PType" ColumnName="PType" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="fname1" ColumnName="fname1" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="AdjDate" ColumnName="AdjDate" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="DealNum" ColumnName="DealNum" />
+          <ScalarProperty Name="VSCOption" ColumnName="VSCOption" />
+          <ScalarProperty Name="FinanceManagerId" ColumnName="FinanceManagerId" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="OtherType" ColumnName="OtherType" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtherProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.OtherProduct)">
+        <MappingFragment StoreEntitySet="OtherProducts">
+          <ScalarProperty Name="OtherProductId" ColumnName="OtherProductId" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="PType" ColumnName="PType" />
+          <ScalarProperty Name="POrder" ColumnName="POrder" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleScreenXRefs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.RoleScreenXRef)">
+        <MappingFragment StoreEntitySet="RoleScreenXRefs">
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.SalesCategory)">
+        <MappingFragment StoreEntitySet="SalesCategories">
+          <ScalarProperty Name="SalesCategoryId" ColumnName="SalesCategoryId" />
+          <ScalarProperty Name="SalesCategory1" ColumnName="SalesCategory1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesManagers">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.SalesManager)">
+        <MappingFragment StoreEntitySet="SalesManagers">
+          <ScalarProperty Name="SMId" ColumnName="SMId" />
+          <ScalarProperty Name="SMName" ColumnName="SMName" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesPersons">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.SalesPerson)">
+        <MappingFragment StoreEntitySet="SalesPersons">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SPtoMasterId" ColumnName="SPtoMasterId" />
+          <ScalarProperty Name="SPName" ColumnName="SPName" />
+          <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Screens">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Screen)">
+        <MappingFragment StoreEntitySet="Screens">
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="ScreenType" ColumnName="ScreenType" />
+          <ScalarProperty Name="ScreenASP" ColumnName="ScreenASP" />
+          <ScalarProperty Name="ScreenOpt" ColumnName="ScreenOpt" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="ScreenOrder" ColumnName="ScreenOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Securities">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Security)">
+        <MappingFragment StoreEntitySet="Securities">
+          <ScalarProperty Name="SecurityId" ColumnName="SecurityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="DealerShip" ColumnName="DealerShip" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoleXRefs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.UserRoleXRef)">
+        <MappingFragment StoreEntitySet="UserRoleXRefs">
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="SecurityId" ColumnName="SecurityId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Vehicle)">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="Vehicle1" ColumnName="Vehicle1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.VehicleType)">
+        <MappingFragment StoreEntitySet="VehicleTypes">
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="VehicleType1" ColumnName="VehicleType1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewBackouts">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewBackout)">
+        <MappingFragment StoreEntitySet="viewBackouts">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewBackoutsDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewBackoutsDetail)">
+        <MappingFragment StoreEntitySet="viewBackoutsDetails">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+          <ScalarProperty Name="BackoutDate" ColumnName="BackoutDate" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewCashDealswithFinRes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewCashDealswithFinRe)">
+        <MappingFragment StoreEntitySet="viewCashDealswithFinRes">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="FinReserve" ColumnName="FinReserve" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewDeals">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewDeal)">
+        <MappingFragment StoreEntitySet="viewDeals">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="payablegross" ColumnName="payablegross" />
+          <ScalarProperty Name="BEGross" ColumnName="BEGross" />
+          <ScalarProperty Name="MakeCalc" ColumnName="MakeCalc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewDealswithoutsalesmgrs">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewDealswithoutsalesmgr)">
+        <MappingFragment StoreEntitySet="viewDealswithoutsalesmgrs">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="SaleManagerId" ColumnName="SaleManagerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewDORProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewDORProduct)">
+        <MappingFragment StoreEntitySet="viewDORProducts">
+          <ScalarProperty Name="DORProductId" ColumnName="DORProductId" />
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewNonCashProdforCashDeals">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewNonCashProdforCashDeal)">
+        <MappingFragment StoreEntitySet="viewNonCashProdforCashDeals">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealNumber" ColumnName="DealNumber" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="FinanceTypeId" ColumnName="FinanceTypeId" />
+          <ScalarProperty Name="Recap" ColumnName="Recap" />
+          <ScalarProperty Name="PAmount" ColumnName="PAmount" />
+          <ScalarProperty Name="OtherProductId" ColumnName="OtherProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewScreenbytypes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewScreenbytype)">
+        <MappingFragment StoreEntitySet="viewScreenbytypes">
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="ScreenType" ColumnName="ScreenType" />
+          <ScalarProperty Name="ScreenOrder" ColumnName="ScreenOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewScreenTypeOrders">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewScreenTypeOrder)">
+        <MappingFragment StoreEntitySet="viewScreenTypeOrders">
+          <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="ScreenType" ColumnName="ScreenType" />
+          <ScalarProperty Name="ScreenOrder" ColumnName="ScreenOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewUnwindDateFixes">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewUnwindDateFix)">
+        <MappingFragment StoreEntitySet="viewUnwindDateFixes">
+          <ScalarProperty Name="DORId" ColumnName="DORId" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="UnwindDate" ColumnName="UnwindDate" />
+          <ScalarProperty Name="lname1" ColumnName="lname1" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="BackoutDate" ColumnName="BackoutDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewUserRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.viewUserRole)">
+        <MappingFragment StoreEntitySet="viewUserRoles">
+          <ScalarProperty Name="SecurityId" ColumnName="SecurityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DealerShip" ColumnName="DealerShip" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VSales_Recap">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.VSales_Recap)">
+        <MappingFragment StoreEntitySet="VSales_Recap">
+          <ScalarProperty Name="SalesRecapRecordID" ColumnName="SalesRecapRecordID" />
+          <ScalarProperty Name="dealership" ColumnName="dealership" />
+          <ScalarProperty Name="dealer_id" ColumnName="dealer_id" />
+          <ScalarProperty Name="new_cars" ColumnName="new_cars" />
+          <ScalarProperty Name="new_trucks" ColumnName="new_trucks" />
+          <ScalarProperty Name="new_suvs" ColumnName="new_suvs" />
+          <ScalarProperty Name="used_vehicles" ColumnName="used_vehicles" />
+          <ScalarProperty Name="total_vehicles" ColumnName="total_vehicles" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="nc_cash_per" ColumnName="nc_cash_per" />
+          <ScalarProperty Name="nt_cash_per" ColumnName="nt_cash_per" />
+          <ScalarProperty Name="ns_cash_per" ColumnName="ns_cash_per" />
+          <ScalarProperty Name="uv_cash_per" ColumnName="uv_cash_per" />
+          <ScalarProperty Name="conv" ColumnName="conv" />
+          <ScalarProperty Name="nc_conv_per" ColumnName="nc_conv_per" />
+          <ScalarProperty Name="nt_conv_per" ColumnName="nt_conv_per" />
+          <ScalarProperty Name="ns_conv_per" ColumnName="ns_conv_per" />
+          <ScalarProperty Name="uv_conv_per" ColumnName="uv_conv_per" />
+          <ScalarProperty Name="rbf" ColumnName="rbf" />
+          <ScalarProperty Name="nc_rbf_per" ColumnName="nc_rbf_per" />
+          <ScalarProperty Name="nt_rbf_per" ColumnName="nt_rbf_per" />
+          <ScalarProperty Name="ns_rbf_per" ColumnName="ns_rbf_per" />
+          <ScalarProperty Name="uv_rbf_per" ColumnName="uv_rbf_per" />
+          <ScalarProperty Name="osf" ColumnName="osf" />
+          <ScalarProperty Name="nc_osf_per" ColumnName="nc_osf_per" />
+          <ScalarProperty Name="nt_osf_per" ColumnName="nt_osf_per" />
+          <ScalarProperty Name="ns_osf_per" ColumnName="ns_osf_per" />
+          <ScalarProperty Name="uv_osf_per" ColumnName="uv_osf_per" />
+          <ScalarProperty Name="ave_nc_front" ColumnName="ave_nc_front" />
+          <ScalarProperty Name="ave_nt_front" ColumnName="ave_nt_front" />
+          <ScalarProperty Name="ave_ns_front" ColumnName="ave_ns_front" />
+          <ScalarProperty Name="ave_nv_front" ColumnName="ave_nv_front" />
+          <ScalarProperty Name="ave_uv_front" ColumnName="ave_uv_front" />
+          <ScalarProperty Name="ave_nc_back" ColumnName="ave_nc_back" />
+          <ScalarProperty Name="ave_nt_back" ColumnName="ave_nt_back" />
+          <ScalarProperty Name="ave_ns_back" ColumnName="ave_ns_back" />
+          <ScalarProperty Name="ave_nv_back" ColumnName="ave_nv_back" />
+          <ScalarProperty Name="ave_uv_back" ColumnName="ave_uv_back" />
+          <ScalarProperty Name="tot_income" ColumnName="tot_income" />
+          <ScalarProperty Name="avg_front" ColumnName="avg_front" />
+          <ScalarProperty Name="avg_fi_gross" ColumnName="avg_fi_gross" />
+          <ScalarProperty Name="avg_f_b" ColumnName="avg_f_b" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Years">
+      <EntityTypeMapping TypeName="IsTypeOf(FowlerDORModel.Year)">
+        <MappingFragment StoreEntitySet="Years">
+          <ScalarProperty Name="YearId" ColumnName="YearId" />
+          <ScalarProperty Name="Year1" ColumnName="Year1" />
+          <ScalarProperty Name="DisableDate" ColumnName="DisableDate" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="UpdUser" ColumnName="UpdUser" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
